@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>京杭运韵</title>
+		<style type="text/css">
+				body,html{
+					height:100%;
+					width: 100%;
+					position: fixed;
+					left:0;
+					bottom: 0;
+					top:0;
+					right:0;
+					background-image:url("img/bgimg.jpg");
+					background-repeat:no-repeat;
+					background-size:cover;
+    				background-attachment: fixed;
+				}
+			    .contain {
+			        height:60px;
+			        width:60px;
+			        position: fixed;
+			        transform: translate(-50%, -50%);
+			    }
+			    .contain1{
+				    left: 32%;
+				    top: 64%;
+		        }
+		        .contain2{
+				    left: 44%;
+				    top: 16%;
+		        }
+		        .contain3{
+			        left: 52%;
+    				top: 23%;
+		        }
+		        .contain4{
+			        left: 43%;
+    				top: 36%;
+		        }
+		        .contain5{
+			        left: 53%;
+    				top: 53%;
+		        }
+		        .contain6{
+			        left: 69%;
+    				top: 60%;
+		        }
+		        .contain7{
+			        left: 76%;
+   					top: 71%;
+		        }
+		        .contain8{
+			        left: 80%;
+    				top: 83%;
+		        }
+			    .dot {
+				    height: 30px;
+				    width: 30px;
+			        position: absolute;
+			        left: 50%;
+			        top: 50%;
+				    border-radius: 50%;
+				    background-color: #f1f1f1;
+				    opacity: 0.4;
+			        transform: translate(-50%, -50%);
+				    transition: width 0.8s, height 0.8s, transform 0.8s;
+				}
+				
+				.line {
+				  width: 0px;
+				  height: 2px;
+				  background-color: white;
+				  position: absolute;
+				  transition: width 0.5s ease-in-out;
+				}
+				.line1{
+				  top: 9.5px;
+				  right: 20px;
+				}
+				.line2{
+				  top: 10px;
+				  left: 20px;
+				}
+				.box {
+				  height: 20px;
+				  text-align: left;
+				  background-color: white;
+				  
+				  color: rgba(0,0,0,0);
+				  text-indent: 10px;
+				  padding-bottom:2px ;
+	       		  clip-path: inset(0 100% 0 0);
+	       		  
+				  position: absolute;
+				  transition: clip-path 0.5s  ease-in-out;
+				}
+				.box1{
+				  width: 160px;
+				  top: -15px;
+				  left: -190px;				
+				}
+				.box2{
+				  width: 100px;
+					top: -15px;
+					right:-140px;
+				}
+				.contain:hover .dot{
+				    opacity: 1;
+				    height: 20px;
+				    width: 20px;
+	        		transform: scale(0.67);
+					transform: translate(-50%,-50%);
+				}
+				.contain:hover .line1{
+					width:200px;
+				}
+				.contain:hover .line2{
+					width:140px;
+				}
+				.contain:hover .box{
+	       		    clip-path: inset(0 0 0 0);
+				    color: rgba(0,0,0,1);
+					opacity: 0.6;
+				}
+				.logo{
+				    width: 41%;
+				    height: 33%;
+				    display: flex;
+					position: fixed;
+					left:51% ;
+					top:25%;
+					justify-content: center;
+					transform: translate(-50%,-50%);
+				}
+				.logo img{
+					max-width: 633px;
+					max-height:256px;
+				}
+				.begin{
+					width:17%;
+					height:8.2%;
+				    display: flex;
+					position: fixed;
+					left:50% ;
+					bottom:6%;
+					transform: translate(-50%,-50%);
+					justify-content: center;
+				}
+				.begin img{
+					max-width: 236px;
+					max-height:64px;
+				}
+				.picture1{
+				    position: relative;
+				    left: 0%;
+				    bottom: 0%;
+					max-width:360px;
+					max-height:500px;
+				}
+				.picture2{
+				    position: relative;
+				    right: 0%;
+				    bottom: -30%;
+				    max-width: 50px;
+				    max-height: 265px;
+				}
+				.mainDiv{
+	                width:100%;
+	                flex-grow:1;
+					margin:0px auto;
+					display: flex;
+				}
+				.rightImg{
+				    display: flex;
+				    width: 350px;
+				    height: 519px;
+				    position: fixed;
+				    right: -5%;
+				    bottom: -18%;
+				    transform: translate(-50%,-50%);
+				    justify-content: center;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="mainDiv">
+			<div class="logo"><img src="img/logo.png"/></div>
+			
+			<div class="begin"><a href="index2.html" ><img src="img/beiginlogo.png"/></a></div>
+			
+			<div class="rightImg">
+				
+				<div><a href="https://baike.baidu.com/item/%E4%BA%AC%E6%9D%AD%E5%A4%A7%E8%BF%90%E6%B2%B3/345335?fr=ge_ala" target="_blank" 
+					title="京杭大运河_百度百科"><img class="picture2" src="img/sreach.png"></a></div>
+				<div><img class="picture1" src="img/qidaduan.png"/></div>
+				<div class="contain contain2">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">通惠河</div>
+					</div>
+				</div>
+				<div class="contain contain3">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">北运河</div>
+					</div>
+				</div>
+				<div class="contain contain4">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">南运河</div>
+					</div>
+				</div>
+				<div class="contain contain5">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">鲁运河</div>
+					</div>
+				</div>
+				<div class="contain contain6">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">中运河</div>
+					</div>
+				</div>
+				<div class="contain contain7">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">里运河</div>
+					</div>
+				</div>
+				<div class="contain contain8">
+					<div class="dot">
+						<div class="line line2"></div>
+						<div class="box box2">江南运河</div>
+					</div>
+			</div>
+				</div>
+				<div class="contain contain1">
+					<div class="dot">
+						<div class="line line1"></div>
+						<div class="box box1">拱宸桥</div>
+					</div>
+				</div>
+		</div>
+			
+	</body>
+</html>

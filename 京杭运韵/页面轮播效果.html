@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(179, 217, 244);
+        }
+        
+        .a{
+            position:relative;
+            perspective:1600px;
+            top:320px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .b{
+            width:400px;
+            height:250px;
+            position:absolute;
+            transform-style: preserve-3d;
+            animation:a 30s infinite cubic-bezier(.7,0,.17,1);
+            /* 以下为图片中文字修改 */
+            font-size: 20px;
+            font-family:楷体;
+            text-align: center;
+        }
+
+        .b div{
+            position:absolute;
+            background-size: center;
+            /* 图片透明度设置 */
+            opacity:.95;
+            width:400px;
+            height:250px;
+            /* 切记，更改图片片数时，这个地方也要改哟：60deg (360/n)*/
+            transform: rotateY(calc(var(--i)*60deg)) translateZ(600px);
+        }
+        /* 贴三张图 */
+        /* @keyframes a{
+            0%{
+                transform: translateZ(-100px) rotateY(0);
+            }
+            33%{
+                transform: translateZ(-100px) rotateY(-120deg);
+            }
+            66%{
+                transform: translateZ(-100px) rotateY(-240deg);
+            }
+            100%{
+                transform: translateZ(-100px) rotateY(-360deg);
+            }
+        } */
+        /* 贴六张图改编 */
+                @keyframes a{
+            0%{
+                transform: translateZ(-100px) rotateY(0);
+            }
+            16.7%{
+                transform: translateZ(-100px) rotateY(-60deg);
+            }
+            33.3%{
+                transform: translateZ(-100px) rotateY(-120deg);
+            }
+            50%{
+                transform: translateZ(-100px) rotateY(-180deg);
+            }
+            66.7%{
+                transform: translateZ(-100px) rotateY(-240deg);
+            }
+            83.3%{
+                transform: translateZ(-100px) rotateY(-300deg);
+            }
+            100%{
+                transform: translateZ(-100px) rotateY(-360deg);
+            }
+}
+        .a1 {
+              color:rgb(74, 84, 203);
+              text-decoration: none;
+              font-size:40px;
+              font-family:宋体;
+              position: fixed; 
+              top: 20px; left: 20px
+            }
+
+        .a2  {
+              color:rgb(63, 78, 234);
+              text-decoration: none;
+              font-size:25px;
+              font-family:宋体;
+              position: fixed; 
+              bottom: 20px; right: 20px
+
+              
+
+          }
+        .c{
+            /* 放图片 广济桥*/
+            
+            background-image: url("图片/1.jpg");
+             background-size: cover;/*将背景图像按比例缩放，以填充整个元素。这样可以确保背景图像充满整个画面。 */
+            
+        }
+        .d{
+            /* 放图片 京杭大运河博物馆*/
+            background-image: url("图片/2.jpg");
+            background-size: cover;
+        }
+        .e{
+            /* 放图片 香积寺*/
+            background-image: url("图片/3.jpg");
+            background-size: cover;
+        } 
+        .f{
+            /* 放图片 南京十里秦淮*/
+            background-image: url("图片/4.jpg");
+            background-size: cover;
+        }
+        .g{
+            /* 放图片 镇江西津渡历史文化街*/
+            background-image: url("图片/5.jpg");
+            background-size: cover;
+        }
+        .h{
+            /* 放图片 苏州虎丘山*/
+            background-image: url("图片/6.jpg");
+            background-size: cover;
+        } 
+         
+    </style>
+</head>
+<body>
+    <a href="#" class="a1">前去游览</a>
+    <a href="#" class="a2">返回首页</a>
+    <div class="a"> 
+        <div class="b">
+            <div class="c" style="--i:0" >广济桥</div>
+            <div class="d" style="--i:1">京杭大运河博物馆</div>
+             <div class="e" style="--i:2">香积寺</div>
+             <div class="f" style="--i:3">南京十里秦淮</div>
+             <div class="g" style="--i:4">镇江西津渡历史文化街</div>
+             <div class="h" style="--i:5">苏州虎丘山</div>
+        </div>
+    </div>
+</body>
+</html>
