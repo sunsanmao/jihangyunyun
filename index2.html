@@ -42,8 +42,8 @@
 				width:300px;
 				height:20px;
 				position: absolute;
-				right:330px;
-				top:520px;
+				right:300px;
+				top:720px;
 			}
 			.p1{
 				float: left;
@@ -66,9 +66,9 @@
 			.p2 img{
 				position: absolute;
 				right:150px;
-				top:80px;
-				width: 500px;
-				height:600px;
+				top:350px;
+				width: 400px;
+				height:500px;
 			}
 			.line{
 				width: 3px;
@@ -78,6 +78,45 @@
 				left: 590px;
 				top: 140px;
 			}
+			        #container {
+			            position: relative;
+			            width: 580px;
+			            height: 266px;
+			            border: 3px solid #333;
+			            overflow: hidden;
+			        }
+			        #list {
+			            z-index: 1;
+			            width: 580px;
+			            height: 100%;
+			        }
+			        #list img {
+			            width: 580px;
+			        }
+			        .arrow {
+			            display:block;
+			            position: absolute;
+			            top: 115px;
+			            z-index: 2;
+			            display: none;
+			            width: 20px;
+			            height: 40px;
+			            font-size: 36px;
+			            font-weight: bold;
+			            line-height: 37px;
+			            text-align: center;
+			            color: white;
+			            cursor: pointer;
+			        }
+			        #container:hover .arrow {
+			            display: block;
+			        }
+			        #last {
+			            left: 3px;
+			        }
+			        #next {
+			            right: 20px;
+			        }
 		</style>
 	</head>
 	<body>
@@ -90,9 +129,26 @@
 			</br>江南运河一般可通航40～100吨级船舶，年货运量达1600余万吨。
 			</br>是京杭运河运输最繁忙的航道。</div>
 			<div class="t3">↓江南运河无锡城区段↓ *点击图片查看*</div>
-			<div class="p2"><a href="xuanzejiemian.html"><img src="img/p2.png" /></a></div>
+			<div class="p2"><img src="img/p2.jpg" /></div>
 			<div class="t4">●当前所在位置→→→→→→→→</div>
 			<div class="line"></div>
 		</div>
+			<div id="container">
+		        <div id="list">
+		            <img src="img/jnyh1.jpg" id="picView"/>
+		        </div>
+		        <span id="last" class="arrow" onclick="picView()">《</span>
+		        <span id="next" class="arrow" onclick="picView()">》</span>
+		    </div>
+			<script>
+		      var a = 1;
+		      function picView() {
+		        a++;
+		        if(a>2){
+		            a=1;
+		        }
+		        document.getElementById("picView").src="img/jnyh"+a+".jpg";
+		      }
+			</script>
 	</body>
 </html>
