@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Swiper</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(0deg, rgb(255, 96, 54), rgb(253, 38, 122)) no-repeat;
+}
+
+#swiper {
+  height: 70vh;
+  aspect-ratio: 2 / 3;
+  perspective: 1000px;
+  perspective-origin: center 50%;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: translateZ(calc(-30px * var(--i))) translateY(calc(-20px * var(--i))) rotate(calc(-4deg * var(--i)));
+  filter: drop-shadow(2px 2px 20px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.5s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+#like,
+#dislike {
+  font-size: 16vh;
+  border-radius: 50%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  animation-name: animation1;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  /* don't run animation at the beginning */
+  animation-play-state: paused;
+}
+
+#like.trigger,
+#dislike.trigger {
+  animation-name: animation2;
+}
+
+#like {
+  color: red;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#dislike {
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes animation1 {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation2 {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <ion-icon id="dislike" name="heart-dislike"></ion-icon>
+  <div id="swiper">
+    <!-- <div class="card" style="--i:0">
+      <img src="https://source.unsplash.com/random/1000x1000/?sky" alt="">
+    </div>
+    <div class="card" style="--i:1">
+      <img src="https://source.unsplash.com/random/1000x1000/?landscape" alt="">
+    </div>
+    <div class="card" style="--i:2">
+      <img src="https://source.unsplash.com/random/1000x1000/?ocean" alt="">
+    </div>
+    <div class="card" style="--i:3">
+      <img src="https://source.unsplash.com/random/1000x1000/?moutain" alt="">
+    </div>
+    <div class="card" style="--i:4">
+      <img src="https://source.unsplash.com/random/1000x1000/?forest" alt="">
+    </div> -->
+  </div>
+  <ion-icon id="like" name="heart"></ion-icon>
+  
+  <script src="./card.js"></script>
+  <script src="./script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    class Card {
+  constructor({
+    imageUrl,
+    onDismiss,
+    onLike,
+    onDislike
+  }) {
+    this.imageUrl = imageUrl;
+    this.onDismiss = onDismiss;
+    this.onLike = onLike;
+    this.onDislike = onDislike;
+    this.#init();
+  }
+
+  // private properties
+  #startPoint;
+  #offsetX;
+  #offsetY;
+
+  #isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator.msMaxTouchPoints > 0));
+  }
+
+  #init = () => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const img = document.createElement('img');
+    img.src = this.imageUrl;
+    card.append(img);
+    this.element = card;
+    if (this.#isTouchDevice()) {
+      this.#listenToTouchEvents();
+    } else {
+      this.#listenToMouseEvents();
+    }
+  }
+
+  #listenToTouchEvents = () => {
+    this.element.addEventListener('touchstart', (e) => {
+      const touch = e.changedTouches[0];
+      if (!touch) return;
+      const { clientX, clientY } = touch;
+      this.#startPoint = { x: clientX, y: clientY }
+      document.addEventListener('touchmove', this.#handleTouchMove);
+      this.element.style.transition = 'transform 0s';
+    });
+
+    document.addEventListener('touchend', this.#handleTouchEnd);
+    document.addEventListener('cancel', this.#handleTouchEnd);
+  }
+
+  #listenToMouseEvents = () => {
+    this.element.addEventListener('mousedown', (e) => {
+      const { clientX, clientY } = e;
+      this.#startPoint = { x: clientX, y: clientY }
+      document.addEventListener('mousemove', this.#handleMouseMove);
+      this.element.style.transition = 'transform 0s';
+    });
+
+    document.addEventListener('mouseup', this.#handleMoveUp);
+
+    // prevent card from being dragged
+    this.element.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+  }
+
+  #handleMove = (x, y) => {
+    this.#offsetX = x - this.#startPoint.x;
+    this.#offsetY = y - this.#startPoint.y;
+    const rotate = this.#offsetX * 0.1;
+    this.element.style.transform = `translate(${this.#offsetX}px, ${this.#offsetY}px) rotate(${rotate}deg)`;
+    // dismiss card
+    if (Math.abs(this.#offsetX) > this.element.clientWidth * 0.7) {
+      this.#dismiss(this.#offsetX > 0 ? 1 : -1);
+    }
+  }
+
+  // mouse event handlers
+  #handleMouseMove = (e) => {
+    e.preventDefault();
+    if (!this.#startPoint) return;
+    const { clientX, clientY } = e;
+    this.#handleMove(clientX, clientY);
+  }
+
+  #handleMoveUp = () => {
+    this.#startPoint = null;
+    document.removeEventListener('mousemove', this.#handleMouseMove);
+    this.element.style.transform = '';
+  }
+
+  // touch event handlers
+  #handleTouchMove = (e) => {
+    if (!this.#startPoint) return;
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+    const { clientX, clientY } = touch;
+    this.#handleMove(clientX, clientY);
+  }
+
+  #handleTouchEnd = () => {
+    this.#startPoint = null;
+    document.removeEventListener('touchmove', this.#handleTouchMove);
+    this.element.style.transform = '';
+  }
+
+  #dismiss = (direction) => {
+    this.#startPoint = null;
+    document.removeEventListener('mouseup', this.#handleMoveUp);
+    document.removeEventListener('mousemove', this.#handleMouseMove);
+    document.removeEventListener('touchend', this.#handleTouchEnd);
+    document.removeEventListener('touchmove', this.#handleTouchMove);
+    this.element.style.transition = 'transform 1s';
+    this.element.style.transform = `translate(${direction * window.innerWidth}px, ${this.#offsetY}px) rotate(${90 * direction}deg)`;
+    this.element.classList.add('dismissing');
+    setTimeout(() => {
+      this.element.remove();
+    }, 1000);
+    if (typeof this.onDismiss === 'function') {
+      this.onDismiss();
+    }
+    if (typeof this.onLike === 'function' && direction === 1) {
+      this.onLike();
+    }
+    if (typeof this.onDislike === 'function' && direction === -1) {
+      this.onDislike();
+    }
+  }
+}
+</script>
+<script>
+    // DOM
+const swiper = document.querySelector('#swiper');
+const like = document.querySelector('#like');
+const dislike = document.querySelector('#dislike');
+
+// constants
+const urls = [
+//   'https://photos/001.jpg',
+  'https://source.unsplash.com/random/1000x1000/?landscape',
+  'https://source.unsplash.com/random/1000x1000/?ocean',
+  'https://source.unsplash.com/random/1000x1000/?moutain',
+  'https://source.unsplash.com/random/1000x1000/?forest'
+];
+
+// variables
+let cardCount = 0;
+
+// functions
+function appendNewCard() {
+  const card = new Card({
+    imageUrl: urls[cardCount % 5],
+    onDismiss: appendNewCard,
+    onLike: () => {
+      like.style.animationPlayState = 'running';
+      like.classList.toggle('trigger');
+    },
+    onDislike: () => {
+      dislike.style.animationPlayState = 'running';
+      dislike.classList.toggle('trigger');
+    }
+  });
+  swiper.append(card.element);
+  cardCount++;
+
+  const cards = swiper.querySelectorAll('.card:not(.dismissing)');
+  cards.forEach((card, index) => {
+    card.style.setProperty('--i', index);
+  });
+}
+
+// first 5 cards
+for (let i = 0; i < 5; i++) {
+  appendNewCard();
+}
+</script>
+</body>
+
+</html>

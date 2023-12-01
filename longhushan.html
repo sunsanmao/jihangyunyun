@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>longhushan</title>
+    <style>
+        body.html{
+            width:100%;
+            height:100%;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+	        background-position: center;
+            background: linear-gradient(to bottom, rgb(29, 115, 201), rgb(149, 92, 190), violet,rgb(29, 115, 201));
+            background-size: 100% 100%;
+            height: 100vh;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            /* background: linear-gradient(to bottom, blue, indigo, violet); */
+            /* background: linear-gradient(to right, #ff0000, #0000ff); */
+            /* background: rgb(119 157 193); */
+            /* background-image: url("photos/longhushan1.jpg"); */
+            
+        }
+        .a{
+            position: relative;
+            top: 100px;
+            width: 1000px;
+            height: 600px;
+            background-image: url("photos/longhushan.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .b,
+        .c,
+        .d,
+        .e{
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            /* 设置阴影 */
+            filter: drop-shadow(4px 4px 12px rgba(0,0,0,.5));
+            background-size: cover;
+            opacity: .7;
+            transition: .5s;
+        }
+        .b::after,
+        .c::after,
+        .d::after,
+        .e::after{
+            content: "";
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            background-image: url("photos/longhushan.jpg");
+        }
+        .b{
+            left: -400px;
+            transform: rotateZ(100deg);
+            overflow: hidden;
+        }
+        .b::after{
+            transform: rotateZ(-100deg);
+        }
+
+        .c{
+            left: -400px;
+            transform: rotateZ(-100deg);
+            overflow: hidden;
+        }
+        .c::after{
+            transform: rotateZ(100deg);
+        }
+
+        .d{
+            right: -400px;
+            transform: rotateZ(105deg);
+            overflow: hidden;
+        }
+        .d::after{
+            transform: rotateZ(-105deg);
+        }
+
+        .e{
+            right: -400px;
+            transform: rotateZ(-100deg);
+            overflow: hidden;
+        }
+        .e::after{
+            transform: rotateZ(100deg);
+        }
+        .f{
+            opacity: 0;
+            font: 900 50px '';
+            /* 设置字体间距 */
+            letter-spacing: 10px;
+            color: rgb(60,60,70);
+            transition: .5s;
+            text-decoration: none;
+        }
+        /* 设置动画 */
+        .a:hover .b{
+            left: -550px;
+        }
+        .a:hover .c{
+            left: -600px;
+        }
+        .a:hover .d{
+            right: -550px;
+        }
+        .a:hover .e{
+            right: -610px;
+        }
+        .a:hover .f{
+            opacity: 1;
+        }
+    </style>
+</head>
+   
+<body>
+    <div class="a">
+        <div class="b"></div>
+        <div class="c"></div>
+        <div class="d"></div>
+        <div class="e"></div>
+        <a class="f" href="longhushan2.html">龙虎山</a>
+        <!-- <p class="f">GO TOURINGS</p> -->
+        
+    </div>
+</body>
+
+</html>

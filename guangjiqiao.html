@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guang Ji</title>
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
+    body,html{
+        height:100%;
+        width:100%;
+    }
+    .p1{
+        left:50%;
+        top:5%;
+        color:rgb(0, 102, 255);
+        font-size:60px;
+        font-family:华文行楷;
+    }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: #16384c; */
+    
+  background: linear-gradient(#16384c, rgb(211, 211, 214));
+}
+
+.container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover{
+    height: 420px;
+}
+
+.container .card .imgBx{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .imgBx img
+{
+    /*max-width: 100%;*/
+    height: 260px;
+    width: 260px;
+    border-radius: 4px;
+}
+.container .card .content
+{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color:  #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover .content
+{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+} 
+.k{
+    text-decoration: none;
+            color:rgba(145, 255, 0, 0.604);
+            font-family:楷体;
+            font-size:25px;
+            position: relative;
+            z-index: 3;
+            bottom:3%;
+            
+}
+</style>
+<link rel="stylesheet" type="text/css" href="card.css">
+</head>
+<body>
+<div class="container">
+<div class="card">
+<div class="imgBx">
+<img src="photos/guangjiqiaotupian.webp">
+</div>
+<div class="content">
+<h2>历史与文化</h2>
+<p>广济桥，位于中国广东省潮州市，是一座历史悠久的桥梁，见证了中国古代桥梁建筑的发展历程。它集梁桥、浮桥、拱桥于一体，是中国古代桥梁的杰出代表。</p>
+</div>
+</div>
+<div class="card">
+<div class="imgBx">
+<img src="photos/guangji1.jpg">
+</div>
+<div class="content">
+<h2>建筑特色</h2>
+<p>广济桥的独特之处在于其巧妙的建筑结构和美丽的景观。桥梁上的亭台楼阁和雕塑装饰都体现了中国古代文化的韵味。此外，广济桥的实用性和美观性使其成为了一座观赏和交通的双重功能桥梁。 </p>
+</div>
+</div>
+<div class="card">
+<div class="imgBx">
+<img src="photos/guangji3.jpg">
+</div>
+<div class="content">
+<h2>广济魅力</h2>
+<p>广济桥是潮州市的标志性旅游景点之一，每年吸引着大量游客前来参观。游客可以在桥上欣赏到美丽的江景，感受到中国古代文化的魅力，同时也可以了解中国古代桥梁建筑的技艺和智慧。</p>
+</div>
+</div>
+</div>
+<p class="p1">广济桥</p>
+<a class="k" href="yemianlunbo.html">返回</a>
+</body>
+</html> 

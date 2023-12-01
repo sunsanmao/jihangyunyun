@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document3</title>
+    <style>
+        #musicIcon {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      </style>
     <link rel="stylesheet" href="pintu.js">
     <link rel="stylesheet" href="pintu.css">
 </head>
 <body>
+    <!-- 音乐 -->
+    <audio id="backgroundMusic" loop>
+    <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+       
+      </audio>
+      <span id="musicIcon">🎵</span>
+      <script>
+         const musicIcon = document.getElementById('musicIcon');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    let isMusicPlaying = true;
+
+// 点击一下，开始播放音乐，再点一下，暂停
+    musicIcon.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        backgroundMusic.pause();
+        isMusicPlaying = false;
+      } else {
+        backgroundMusic.play();
+        isMusicPlaying = true;
+      }
+    });
+      </script>
+
     <div class="cover-screen">
         <p id="result"></p>
         <button id="start-button">Start Game</button>
@@ -19,7 +51,10 @@
             <img src="photos/pintu.jpg"  alt="">
         </div>
     </div>
-    <script src="pintu.js" ></script>
+    <script src="pintu.js" >
+     
+  
+    </script>
     
 </body>
 </html>

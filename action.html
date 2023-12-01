@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正在航运_杭州段</title>
+		<link rel="stylesheet" href="css/action.css" />
+		<style type="text/css">
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #68ae9f;//;
+				overflow: hidden;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="form">
+			<div class="imglist" id="imglist2">
+				<img src="img/mountouns2.png">
+				<img src="img/mountouns2.png">
+			</div>
+			<div class="imglist" id="imglist4">
+				<img src="img/mountouns4.png">
+				<img src="img/mountouns4.png">
+			</div>
+			<div class="river">
+				<div id="boat">
+				<img src="img/boat.png">
+				</div>
+			</div>
+			<div class="imglist" id="wave1" >
+				<img src="img/wave.png">
+				<img src="img/wave.png">
+			</div>
+			<div class="imglist" id="wave2">
+				<img src="img/wave.png">
+				<img src="img/wave.png">
+			</div>
+			<div class="imglist" id="wave3">
+				<img src="img/wave.png">
+				<img src="img/wave.png">
+			</div>
+			<div class="imglist" id="wave4">
+				<img src="img/wave.png">
+				<img src="img/wave.png">
+			</div>
+			<div class="imglist" id="imglist3">
+				<img src="img/mountouns3.png">
+				<img src="img/mountouns3.png">
+			</div>
+			<div class="imglist" id="imglist1">
+				<img src="img/mountouns1.png">
+				<img src="img/mountouns1.png">
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var max_speed = 2;
+			var acceleration = 0.007;  // 加速度
+			var raf;
+			var low=0;
+			var boat_left = parseInt(window.getComputedStyle(document.getElementById("boat")).left);
+			var pic1_left=0;
+			var pic2_left=0;
+			var pic3_left=0;
+			var pic4_left=0;
+			var wave1_left=0;
+			var wave2_left=-2002;
+			var speed = 1;  // 初始速度
+			function move(){
+				pic1_left--;
+				pic2_left-=1.5;
+				pic3_left-=1.333;
+				pic4_left-=2;
+				wave1_left-=1;
+				wave2_left+=0.5;
+				if (pic1_left<=-2172){
+					pic1_left=0;
+				}
+				
+				if (pic4_left<=-2172){
+					pic4_left=0;
+				}
+				
+				if (pic2_left<=-2172){
+					pic2_left=0;
+				}
+				
+				if (pic3_left<=-2172){
+					pic3_left=0;
+				}
+				if (wave2_left>=0){
+					wave2_left=-2172;
+				}
+				if (wave1_left<=-2172){
+					wave1_left=0;
+				}
+				document.getElementById("imglist1").style.left=pic1_left+'px';
+				document.getElementById("imglist2").style.left=pic2_left+'px';
+				document.getElementById("imglist3").style.left=pic3_left+'px';
+				document.getElementById("imglist4").style.left=pic4_left+'px';
+				document.getElementById("wave1").style.left=wave1_left+'px';
+				document.getElementById("wave2").style.left=wave2_left+'px';
+				document.getElementById("wave3").style.left=wave1_left+'px';
+				document.getElementById("wave4").style.left=wave2_left+'px';
+		        raf=window.requestAnimationFrame(move);
+			}
+			
+			var out=true;
+			function boat_move(){
+			    if (speed > max_speed) {
+			    	low=1;
+			    }
+			    if(low){
+			        speed -= acceleration;  // 减速阶段
+			        if(speed < 0.5) {  // 防止速度变为负数
+			            speed = 0.5;
+			            acceleration=0;
+			        }
+			    } else {
+			        speed += acceleration;  
+			    }
+			    boat_left += speed;
+				document.getElementById("boat").style.left=boat_left+'px';
+		        if (boat_left<=550) window.requestAnimationFrame(boat_move);
+				if (boat_left>=500&&out){ 
+					move();
+					out=false;
+				}
+			}
+			window.onload=function(){
+		    	boat_move();
+			}
+		</script>
+	</body>
+</html>

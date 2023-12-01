@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document1</title>
     <style>
         body,html{
             width:100%;
@@ -63,6 +63,14 @@
         .card:hover{
             transform:scale(1.2);
             box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        #musicIcon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
         }
         /* a{
             color:grey;
@@ -148,6 +156,28 @@
     </style>
 </head>
 <body>
+    <!-- 背景音乐 -->
+    <audio id="backgroundMusic" loop>
+        <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+       
+      </audio>
+      <span id="musicIcon">🎵</span>
+      <script>
+        const musicIcon = document.getElementById('musicIcon');
+   const backgroundMusic = document.getElementById('backgroundMusic');
+   let isMusicPlaying = true;
+   musicIcon.addEventListener('click', () => {
+     if (isMusicPlaying) {
+       backgroundMusic.pause();
+       isMusicPlaying = false;
+     } else {
+       backgroundMusic.play();
+       isMusicPlaying = true;
+     }
+   });
+     </script>
+
+    <!-- 正文 -->
     <div class="card">
         <div class="card-image"></div>
         <div class="card-text">

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Music Page</title>
+  <style>
+    #musicIcon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+   <audio id="backgroundMusic" loop>
+    <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+   
+  </audio>
+  <span id="musicIcon">🎵</span>
+
+  <script>
+    // 这段代码的作用是获取页面上的音乐图标元素和背景音乐元素，并初始化一个变量来表示音乐是否正在播放（初始状态为正在播放）。
+    const musicIcon = document.getElementById('musicIcon');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    let isMusicPlaying = true;
+
+// 点击一下，开始播放音乐，再点一下，暂停
+    musicIcon.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        backgroundMusic.pause();
+        isMusicPlaying = false;
+      } else {
+        backgroundMusic.play();
+        isMusicPlaying = true;
+      }
+    });
+  </script>
+</body>
+</html>

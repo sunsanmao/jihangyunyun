@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>longhushan2</title>
+    <style>
+        body,html{
+            height:100%;
+            width:100%;
+            overflow: hidden;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 背景图片透明化效果 */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('photos/longhushan2.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* 设置背景图片的透明度 */
+            z-index:-1;
+/* }
+        body{
+            background-image: url('photos/longhushan2.jpg');
+            background-size: cover;
+            background-size: 100% 100%;
+            /* opacity: 0.8;  设置透明度，范围为0到1 */
+            /* background-color: rgba(0, 0, 0, 0.5);
+            background-repeat: no-repeat; */
+        } 
+        p{
+            text-indent: 2em;
+            font-family: 楷体;
+            color: rgb(57, 59, 1); 
+            z-index:3;
+            
+
+        }
+        div{
+            z-index:3;
+            left:50%;
+            top:50%;
+            padding-left: 40px;
+            padding-right: 30px;
+        }
+        /* .bg {
+            height: 80%;
+            width: 80%;
+            border-radius: 20px;
+            background-image: url('http://www.youyu001.com/res/htmlLX/134.jpg');
+            opacity: 0.7;
+        } */
+        .snow {
+            position: absolute;
+            color: rgb(112, 113, 28,0.5);
+            font-size: 45px;
+            z-index: 1;
+        }
+        h1{
+            color:rgb(40, 103, 8);
+            font-family: 华文行楷;
+            position:fixed;
+            position: relative;
+            top:30%;
+            left:45%;
+        }
+        .k{
+            text-decoration: none;
+            color:rgba(145, 255, 0, 0.604);
+            font-family:楷体;
+            font-size:25px;
+            position: relative;
+            z-index: 3;
+            right:8%;
+        }
+        .d{
+            text-decoration: none;
+            color:rgba(151, 214, 3, 0.779);
+            font-family:楷体;
+            font-size:25px;
+            position: relative;
+            z-index: 3;
+            right:5%;
+        }
+
+    </style>
+    
+</head>
+<body onload="init()">
+    <div class="image">
+        <h1>龙虎山</h1>
+    <div><p>
+        龙虎山背景：
+龙虎山原名云锦山，因东汉中叶张道陵在此炼丹，丹成而龙虎现，因改名龙虎山。据道教典籍记载，张道陵第四代传人张盛在三国或西晋时已赴龙虎山定居，此后张天师后裔世居龙虎山，至今承袭六十三代，历经1900多年。
+</div></p>
+<div><p>
+历史文化：
+龙虎山风景名胜区为世界地质公园、国家自然遗产、国家重点风景名胜区、国家5A级旅游景区、国家级森林公园。龙虎山有着悠久的道教历史和独特的道教文化，被誉为“中国道教第一山”。景区内保存着许多古代道观和文物，如天师府、正一观、上清宫等，这些古建筑和文物见证了龙虎山作为道教名山的悠久历史。
+
+此外，龙虎山还有着丰富的自然景观和人文景观。景区内有奇峰怪石、飞瀑流泉、森林茂密，还有着许多珍稀野生动植物。同时，这里还有着悠久的文化底蕴，如龙虎山地区的古代崖墓群、古代瓷窑遗址等，都是中国历史文化的重要遗产。
+</p></div>
+<div><p>
+美景风貌：
+龙虎山的山水景色十分优美，有着“小桂林”之称。这里的山水相依，景色秀美，有着许多美丽的景点，如仙女岩、象鼻山、莲花洞等。在仙女岩上，可以看到一尊形似仙女的小岩石，传说这是张道陵的弟子仙女修炼成仙的地方。在象鼻山景点，可以看到一座形似大象的山峰，其壮观的景色让人叹为观止。
+
+除了自然景观外，龙虎山还有着许多人文景观，如天师府、正一观等。这些古建筑和文物都有着悠久的历史和独特的文化内涵，可以让游客更好地了解中国的道教文化和历史。
+</p>  </div></div>
+
+    <div class="bg"></div>
+    <div class="snow" id="snow0">💮</div>
+    <div class="snow" id="snow1">🏵</div>
+    <div class="snow" id="snow2">🌸</div>
+    <div class="snow" id="snow3">🌸</div>
+    <div class="snow" id="snow4">💮</div>
+    <div class="snow" id="snow5">🏵</div>
+  
+    <script>
+      var speed = [];
+  
+      function init() {
+        for (var i = 0; i < 6; i++) {
+          document.getElementById("snow" + i).style.top = "-30px";
+          var width = document.body.offsetWidth;
+          var left = Math.random() * width;
+          document.getElementById("snow" + i).style.left = left + "px";
+          var size = Math.random() * 30 + 15;
+          document.getElementById("snow" + i).style.fontSize = size + "px";
+          speed.push(Math.random() * 3 + 1);
+        }
+        moveSnow();
+      }
+  
+      function moveSnow() {
+        for (var i = 0; i < 6; i++) {
+          var snowflake = document.getElementById("snow" + i);
+          var top = parseInt(snowflake.style.top.replace("px", ""));
+          top += speed[i];
+          snowflake.style.top = top + "px";
+          
+          if (top > document.body.offsetHeight) {
+            snowflake.style.top = "-30px";
+            var width = document.body.offsetWidth;
+            var left = Math.random() * width;
+            snowflake.style.left = left + "px";
+          }
+        }
+        window.requestAnimationFrame(moveSnow);
+      }
+    </script>
+    <a class="k" href="yemianlunbo.html">返回上一页</a>
+    <a class="d" href="xuanzejiemian.html">回到首页</a>
+</body>
+</html>

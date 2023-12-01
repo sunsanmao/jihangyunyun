@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document2</title>
     <style>
         body,html{
             width: 100%;
@@ -168,21 +168,48 @@
             background-image: url("photos/6.jpg");
             background-size: cover;
         } 
-         
+        #musicIcon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <a href="http://www.canal-museum.cn/" class="a6">前去游览</a>
+    <!-- 背景音乐 -->
+    <audio id="backgroundMusic" loop>
+        <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+       
+      </audio>
+      <span id="musicIcon">🎵</span>
+      <script>
+        const musicIcon = document.getElementById('musicIcon');
+   const backgroundMusic = document.getElementById('backgroundMusic');
+   let isMusicPlaying = true;
+   musicIcon.addEventListener('click', () => {
+     if (isMusicPlaying) {
+       backgroundMusic.pause();
+       isMusicPlaying = false;
+     } else {
+       backgroundMusic.play();
+       isMusicPlaying = true;
+     }
+   });
+     </script>
+     <!-- 正文 -->
+    <a href="guangjiqiao.html" class="a6">前去游览</a>
     <a href="xuanzejiemian.html" target="_blank" class="a5">返回首页</a>
     <div class="a"> 
         <div class="b">
             <div class="c" style="--i:0" >
-                <a href="https://baike.baidu.com/item/%E5%B9%BF%E6%B5%8E%E6%A1%A5/3929" class="a4" target="_blank">广济桥</a></div>
-            <div class="d" style="--i:1"><a href="http://www.canal-museum.cn/" class="a3" target="_blank">京杭大运河博物馆</a></div>
+                <a href="guangjiqiao.html" class="a4" target="_blank">广济桥</a></div>
+            <div class="d" style="--i:1"><a href="xuehua.html" class="a3" target="_blank">京杭大运河博物馆</a></div>
              <div class="e" style="--i:2"><a href="http://xiangjisi.com.cn/aboutus/index.asp" class="a1" target="_blank">香积寺</a></div>
              <div class="f" style="--i:3"><a href="http://www.njfzm.net/brc/40.htm" class="a1" target="_blank">南京十里秦淮</a></div>
              <div class="g" style="--i:4"><a href="https://baike.baidu.com/item/%E8%A5%BF%E6%B4%A5%E6%B8%A1/32478" target="_blank" class="a1">镇江西津渡历史文化街</a></div>
-             <div class="h" style="--i:5"><a href="https://www.longhushan.com.cn/" class="a2" target="_blank">苏州虎丘山</a></div>
+             <div class="h" style="--i:5"><a href="longhushan.html" class="a2" target="_blank">苏州虎丘山</a></div>
         </div>
     </div>
 </body>
