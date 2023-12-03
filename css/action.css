@@ -1,115 +1,368 @@
 #boat {
-	z-index: 2;
+	animation-name: boat;
+	animation-duration: 3.5s;
+	animation-delay: 0s;
+	left:525px;
+	z-index: 6;
 	position: absolute;
 	top: 85px;
 	transform: translate(-50%, -50%);
 }
+.rongqi{
+    z-index: 11;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+.modal {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	margin: auto;
+	margin-top: 70px;
+    width: 700px;
+    height: 600px;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 30px;
+    transition:clip-path 0.7s ease-in-out; 
+}
+#modal1{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal2{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal3{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal4{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal5{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal6{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal7{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal8{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal9{
+	clip-path: inset(0 50% 0 50%);
+}
+#modal10{
+	clip-path: inset(0 50% 0 50%);
+}
+.head_title {
+    padding-top: 32px;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 22px;
+	color: grey;
+	font-family: 方正小标宋简体;
+}
+#next_btn{
+    background-color: #f1f1f1;
+    padding: 12px 0px 12px 60px;
+    border-top-left-radius: 52px;
+    border-bottom-left-radius: 52px;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	z-index: 13;
+	font-size: 50px;
+	transition:opacity 1.5s ease; 
+}
+#next_btn>a{
+  	font-family: "汉呈张平行书";
+	cursor: pointer;
+	color: dodgerblue;
+}
+.sub_title {
+	font-size: 37px;
+	text-align: center;
+	color: #cb9f5d;
+	font-family: 方正小标宋简体;
+}
+#inner_page{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    transform: translateY(53%);
+	z-index: 14;
+	transition: transform 0.7s ease-out;
+}
+.page{
+	width: 1300px;
+    height: 740px;
+}
+#btn_inner{
+    height: 21px;
+	margin: 0;
+}
+.back_gd{
+    width: 1321px;
+    padding: 9px 0;
+    margin: 0 auto;
+	background: #808080;
+}
+.alter_text {
+	color: #64828a;
+	font-family: 微软雅黑;
+	font-weight: bold;
+	background-color: white;
+	border-radius: 20px;
+	margin: 0 20px;
+	padding: 0 8px;
+	font-size: 22px;
+	line-height: 38px;
+}
 
+
+.btn_daka {
+	margin: 0 auto;
+	cursor: pointer;
+	margin-bottom: 32px;
+	border-radius: 37px;
+	width: 340px;
+	height: 78px;
+	background:url(../img/daka.png);
+	background-size: cover;
+	text-align: center;
+	transition: box-shadow 0.5s ease;
+}
+
+.btn_daka:hover {
+	width: 360px;
+	height: 81px;
+	margin-bottom: 29px;
+	box-shadow: 0px 0px 5px 5px rgba(25, 25, 112, 0.2);
+}
+@keyframes boat{
+	0% {left:-200px;}
+	100%{left:525px;}
+}
 .imglist {
 	display: flex;
 	position: absolute;
 }
 
 #imglist2 {
-    animation-name: img8;
-    animation-duration: 3.2s;
-    animation-delay: 0s; 
+	animation-name: img8;
+	animation-duration: 3.2s;
+	animation-delay: 0s;
 	top: 0px;
+	z-index: 0;
 }
+
 @keyframes img8 {
-  0%,62%{ top: -300px; }
-  80% { top: 130px; }
-  100% { top: 0px; }
+	0%,
+	62% {
+		top: -300px;
+	}
+	80% {
+		top: 130px;
+	}
+	100% {
+		top: 0px;
+	}
 }
+
 #imglist1 {
-    animation-name: img1;
-    animation-duration: 0.8s;
-    animation-delay: 0s; 
-	z-index: 2;
+	animation-name: img1;
+	animation-duration: 0.8s;
+	animation-delay: 0s;
+	z-index: 10;
 	bottom: 0px;
 }
 
 @keyframes img1 {
-  0% { bottom: 720px; }
-  65% { bottom: -60px; }
-  100% { bottom: 0px; }
+	0% {
+		bottom: 720px;
+	}
+	65% {
+		bottom: -60px;
+	}
+	100% {
+		bottom: 0px;
+	}
 }
+
 #imglist3 {
-    animation-name: img2;
-    animation-duration: 1.0s;
-    animation-delay: 0s; 
-	z-index: 2;
+	animation-name: img2;
+	animation-duration: 1.0s;
+	animation-delay: 0s;
+	z-index: 9;
 	bottom: 42px;
 }
+
 @keyframes img2 {
-  0%,30%{ bottom: 800px; }
-  85% { bottom: -30px; }
-  100% { bottom: 42px; }
+	0%,
+	30% {
+		bottom: 800px;
+	}
+	85% {
+		bottom: -30px;
+	}
+	100% {
+		bottom: 42px;
+	}
 }
+
 #imglist4 {
-    animation-name: img7;
-    animation-duration: 2.9s;
-    animation-delay: 0s; 
+	animation-name: img7;
+	animation-duration: 2.9s;
+	animation-delay: 0s;
 	top: 0px;
-}
-@keyframes img7 {
-  0%,62%{ top: -300px; }
-  80% { top: 100px; }
-  100% { top: 0px; }
-}
-#wave1 {
-    animation-name: img6;
-    animation-duration: 2.6s;
-    animation-delay: 0s; 
-	top: 250px;
 	z-index: 1;
 }
-@keyframes img6 {
-  0%,55%{ top: -200px; }
-  78% { top: 300px; }
-  100% { top: 250px; }
+
+@keyframes img7 {
+	0%,
+	62% {
+		top: -300px;
+	}
+	80% {
+		top: 100px;
+	}
+	100% {
+		top: 0px;
+	}
 }
+
+#wave1 {
+	animation-name: img6;
+	animation-duration: 2.6s;
+	animation-delay: 0s;
+	top: 250px;
+	z-index: 4;
+}
+
+@keyframes img6 {
+	0%,
+	55% {
+		top: -200px;
+	}
+	78% {
+		top: 300px;
+	}
+	100% {
+		top: 250px;
+	}
+}
+
 #wave2 {
-    animation-name: img5;
-    animation-duration: 2.3s;
-    animation-delay: 0s; 
+	animation-name: img5;
+	animation-duration: 2.3s;
+	animation-delay: 0s;
 	top: 400px;
 	left: -2002px;
 	top: 320px;
-	z-index: 1;
+	z-index: 5;
 }
+
 @keyframes img5 {
-  0%,55%{ top: -200px; }
-  78% { top: 400px; }
-  100% { top: 320px; }
+	0%,
+	55% {
+		top: -200px;
+	}
+	78% {
+		top: 400px;
+	}
+	100% {
+		top: 320px;
+	}
 }
+
 #wave3 {
-    animation-name: img4;
-    animation-duration: 2s;
-    animation-delay: 0s; 
+	animation-name: img4;
+	animation-duration: 2s;
+	animation-delay: 0s;
 	top: 400px;
-	z-index: 2;
+	z-index: 7;
 }
+
 @keyframes img4 {
-  0%,45%{ top: -200px; }
-  85% { top: 465px; }
-  100% { top: 400px; }
+	0%,
+	45% {
+		top: -200px;
+	}
+	85% {
+		top: 465px;
+	}
+	100% {
+		top: 400px;
+	}
 }
+
 #wave4 {
-    animation-name: img3;
-    animation-duration: 1.8s;
-    animation-delay: 0s; 
+	animation-name: img3;
+	animation-duration: 1.8s;
+	animation-delay: 0s;
 	left: -2002px;
 	top: 485px;
-	z-index: 2;
+	z-index: 8;
 }
+
 @keyframes img3 {
-  0%,30%{ top: -200px; }
-  70% { top: 532px; }
-  100% { top: 485px; }
+	0%,
+	30% {
+		top: -200px;
+	}
+	70% {
+		top: 532px;
+	}
+	100% {
+		top: 485px;
+	}
 }
+
 .river {
 	height: 350px;
 	position: relative;
 	top: 290px;
+}
+.imganimation{
+	color:#38473F;
+	font-family:汉呈张平行书;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top:40px;
+	left: 1600px;
+	height:300px;
+	z-index: 2;
+}
+.imganimation>div{
+	margin: auto 0;
+    white-space: nowrap;
+}
+
+#long_title{
+	text-align: center;
+	letter-spacing: 0.3em;
+	margin-right: 40px;
+	font-size:50px;
+}
+#long_zw{
+	letter-spacing: 0.3em;
+	text-align: center;
+	font-size:38px;
+}
+#gjtq{
+	height: 100%;
+}
+@font-face {
+  font-family: "汉呈张平行书";
+  src: url(../font/zaozigongfangzhongyongti.otf);
+}
+@font-face {
+  font-family: "方正小标宋简体";
+  src: url(../font/方正小标宋简体.ttf);
 }

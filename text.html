@@ -6,60 +6,100 @@
 		<style type="text/css">
 			/* CSS */
 			html{
-			    background: #F1F1F1;
+			    background: url(img/jnyh1.jpg);
+			    background-repeat: no-repeat ;
+			    background-size: cover;
 				
 			}
 			p{
 				text-indent: 2em;
 			}
 			.modal {
-			    display: none;
+				display: none;
 			    width: 700px;
 			    height: 569px;
-			    position: fixed;
-			    top: 44%;
-			    left: 50%;
-			    transform: translate(-50%,-50%);
-			    background-color: white;
+			    padding-top:32px ;
+			    background-color:rgb(255,255,255,0.8);
 			    border-radius:30px;
+				box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, 0.2);
 			}
-			.modal>div>h1{
-				font-family: 方正小标宋简体;
+			
+			.head_title{
+				font-size: 40px;
 				text-align: center;
+				margin-bottom:22px ;
+				color: grey;
+				font-family: 方正小标宋简体;
 			}
-			.modal>div{
-				padding-top:30px ;
-				font-family: 华文琥珀;
-				color: burlywood;
-				margin: 0 28px;
+			.sub_title{
+				font-size: 37px;
+				text-align: center;
+				color:#cb9f5d;
+				font-family: 方正小标宋简体;
+			}
+			.alter_text{
+				color: #64828a;
+				font-family: 微软雅黑;
+				font-weight: bold;
+				background-color: white;
+				border-radius:20px ;
+				margin: 0 20px;
+				padding: 0 8px;
 				font-size: 22px;
 				line-height: 38px;
 			}
 			.modal:target {
-			    display: block;
+				display: block;
 			    margin: 0 auto;
+    			animation: scaleUp 0.5s forwards; 	
 			}
-
+			.btn_daka{
+				margin: 0 auto;
+				border-radius: 37px;
+				width: 340px;
+				height:78px;
+				background: url(img/daka.png);
+				background-size:cover ;
+				text-align: center;
+				transition:box-shadow 0.5s ease;
+			}
+			.btn_daka:hover{
+				width: 360px;
+				height:81px;
+				box-shadow:  0px 0px 5px 5px rgba(25, 25, 112, 0.2);
+			}
+			@keyframes scaleUp {
+			    0% { transform: scale(0); }
+			    100% { transform: scale(1); }
+			}
+			
 		</style>
 	</head>
 	<body>
 		<!-- HTML -->
-		<a href="#modal">打开弹窗</a>
-		<div class="modal" id="modal">
-		    
-		    <div>
-		    	<h1>广济桥</h1>
-		    	<p>
-		    		广济桥，为古运河上仅存的一座七孔石拱桥。此桥的造型十分秀丽，在桥下一共置有八座镇水兽。
-		    		有赋记曰：“唐栖南北通衢也，跨溪有桥，额曰通济。肇自前代，漫不可考，久益倾圮，往来病之。”，故又称“通济桥”。
-		    	</p>
-		    	<p>
-		    		古桥穿古镇，连系两岸人。广济桥的修建，便利了两岸人民的交通，加速两岸的发展，增强了人民的幸福感。“广济”，其实就是
-		    		为两岸人民祈福的意思。
-		    	</p>
-		    	
-		    </div>
-		    <a href="#">打卡景点</a>
+		<a href="#modal" style="z-index: 2;">打开弹窗</a>
+		<div>
+			<div class="modal" id="modal">
+				<div class="head_title">
+					<div>景点名片</div>
+				</div>
+				<div class=sub_title>
+					<div>广济桥</div>
+				</div>
+				<div class="alter_text">
+					<p>
+						广济桥，为古运河上仅存的一座七孔石拱桥。此桥的造型十分秀丽，在桥下一共置有八座镇水兽。 有赋记曰：“唐栖南北通衢也，跨溪有桥，额曰通济。肇自前代，漫不可考，久益倾圮，往来病之。”，故又称“通济桥”。
+					</p>
+					<p>
+						古桥穿古镇，连系两岸人。广济桥的修建，便利了两岸人民的交通，加速两岸的发展，增强了人民的幸福感。“广济”，其实就是 为两岸人民祈福的意思。
+					</p>
+			
+				</div>
+				<a href="#">
+					<div class="btn_daka"></div>
+				</a>
+				
+			</div>
 		</div>
 
 	</body>
