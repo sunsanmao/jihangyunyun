@@ -1,13 +1,4 @@
-#boat {
-	animation-name: boat;
-	animation-duration: 3.5s;
-	animation-delay: 0s;
-	left:525px;
-	z-index: 6;
-	position: absolute;
-	top: 85px;
-	transform: translate(-50%, -50%);
-}
+
 .rongqi{
     z-index: 11;
 	position: absolute;
@@ -94,9 +85,10 @@
     position: fixed;
     width: 100%;
     text-align: center;
-    transform: translateY(53%);
+    transform: translate(0%,97%);
+    bottom:0px;
 	z-index: 14;
-	transition: transform 0.7s ease-out;
+	transition: bottom 0.7s ease-out;
 }
 .page{
 	width: 1300px;
@@ -143,6 +135,16 @@
 	height: 81px;
 	margin-bottom: 29px;
 	box-shadow: 0px 0px 5px 5px rgba(25, 25, 112, 0.2);
+}
+#boat {
+	animation-name: boat;
+	animation-duration: 3.5s;
+	animation-delay: 0s;
+	left:525px;
+	z-index: 6;
+	position: absolute;
+	top: 85px;
+	transform: translate(-50%, -50%);
 }
 @keyframes boat{
 	0% {left:-200px;}
@@ -334,7 +336,7 @@
 	display: flex;
 	justify-content: center;
 	position: absolute;
-	top:40px;
+	top:30px;
 	left: 1600px;
 	height:300px;
 	z-index: 2;
@@ -365,4 +367,8 @@
 @font-face {
   font-family: "方正小标宋简体";
   src: url(../font/方正小标宋简体.ttf);
+}
+@font-face {
+  font-family: "欢乐卡通手书";
+  src: url(../font/Aa奶凶奶凶的男朋友.ttf);
 }

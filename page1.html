@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的手帐</title>
+		<link rel="stylesheet" href="css/action.css" />
+		<style type="text/css">
+			body{
+				margin: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				background-color:#34824a ;
+			}
+			h1{
+				text-align: center;
+				font-family: 汉呈张平行书;
+				color:grey;
+			}
+			
+			.book{
+				width: 100px;
+				height: 500px;
+				position: relative;
+	            display: flex;
+	            justify-content: center;
+	            align-items: center;
+	            transition: 1s;
+	            perspective: 1600px;
+	            transform-style: preserve-3d;
+			}
+			.book_cover{
+				width: 500px;
+				height:500px;
+            	position: absolute;
+        	    background-image: linear-gradient(to right, #b0863f, #b47f25, #cb9333);
+            	border-top-right-radius: 20px;
+            	border-bottom-right-radius: 20px;
+           		transform-origin: left;
+            	border: 2px solid #d6b987;
+            	transition: 1s;
+			}
+			.page{
+	            transform-style: preserve-3d;
+				z-index: 100;
+            	border-top-right-radius: 10px;
+            	border-bottom-right-radius: 10px;
+				width: 450px;
+				height:450px;
+				position:absolute;
+				background-color: #ece3d4;
+            	transform-origin: -25px;
+            	transition:1s;
+			}
+			.button{
+				margin: 22px;
+				display: flex;
+				align-items: center;
+			}
+			#left_button,#right_button{
+				font-size: 32px;
+				cursor: pointer;
+				background: #CCCCCC;
+				border-radius: 30px;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+			}
+			.page_face{
+				position: absolute;
+				top:0;
+				transform: rotateY(0deg);
+				backface-visibility: hidden;
+			}
+			.page_face>img{
+				margin:0 20px ;
+			}
+			.page_back{
+				position: absolute;
+				top:0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				transform: rotateY(180deg);
+				backface-visibility: hidden;
+			}
+			.page_back>img{
+				margin:0 20px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="button">
+			<button id="left_button" onclick="last_page()">
+				<
+			</button>
+		</div>
+		<div style="width: 1000px;display: flex;justify-content: center;">
+			<div class="book">
+				<div class="book_cover one_page" id="cover1"></div>
+				<div class="page one_page" id="page1">
+					<div class="page_face">
+						<img src="img/Page_face.png" >
+					</div>
+					<div class="page_back">
+						<h1>广济桥</h1>
+						<img src="shouzhang/pag1.png">
+					</div>
+				</div>
+				<div class="page one_page" id="page2">
+					<div class="page_face">
+						<img src="shouzhang/pag2.png">
+					</div>
+					<div class="page_back">
+						<h1>拱辰桥</h1>
+						<img src="shouzhang/pag3.png">
+						<img src="shouzhang/pag3.4.png">
+					</div>
+				</div>
+				<div class="page one_page" id="page3">
+					<div class="page_face">
+						<img src="shouzhang/pag3.3.png">
+						<img src="shouzhang/pag4.png">
+					</div>
+					<div class="page_back">
+						<h1>桥西人家</h1>
+						<img src="shouzhang/pag5.png">
+					</div>
+				</div>
+				<div class="page one_page" id="page4">
+					<div class="page_face">
+						<img src="shouzhang/pag6.png">
+					</div>
+					<div class="page_back">
+						<h1>香积寺</h1>
+						<img src="shouzhang/pag7.1.png">
+						<img src="shouzhang/pag7.2.png">
+					</div>
+				</div>
+				<div class="page one_page" id="page5">
+					<div class="page_face">
+						<img src="shouzhang/pag7.png">
+						
+					</div>
+					<div class="page_back">
+						<h1>富义仓</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page6">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<h1>武林码头</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page7">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<h1>凤门山</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page8">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<h1>三堡船闸</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page9">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<h1>龙山塔</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page10">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<h1>西兴古镇</h1>
+					</div>
+				</div>
+				<div class="page one_page" id="page10">
+					<div class="page_face">
+						
+					</div>
+					<div class="page_back">
+						<p style="position: absolute;bottom:32px ;width:100%;text-align: center;">记录每一次邂逅……</p>
+					</div>
+				</div>
+				<div class="book_cover one_page" id="cover2"></div>
+			</div>
+		</div>
+		<div class="button">
+			<button id="right_button" onclick="next_page()">
+				>
+			</button>
+		</div>
+		<script>
+			const PAGECOUNT=13;
+			var pageNo=0;
+			var pages=document.querySelectorAll('.page');
+			var c1=document.getElementById('cover1');
+			var c2=document.getElementById('cover2');
+			var book = document.querySelector('.book'); 
+			var b1=document.getElementById("left_button");
+			var b2=document.getElementById("right_button");
+			var allPages=document.querySelectorAll('.one_page')
+			function init(){
+				for (var index=0;index<pages.length;index++){
+					pages[index].style.zIndex=PAGECOUNT-index-1;
+				}
+				c1.style.zIndex=PAGECOUNT;
+				c2.style.zIndex=1;
+				b1.disabled = false  
+			}
+			init()
+			function last_page(){
+				if (pageNo>=0){
+					pageNo --
+				}
+                // 如果当前是最后一页，并往前翻
+                if ((PAGECOUNT - 1) == pageNo) {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(250px)'
+                    b2.disabled = false   
+                }
+                else {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                }
+                allPages[pageNo].style.zIndex = PAGECOUNT - pageNo
+
+                if( 0 == pageNo ) {
+                    b1.disabled = true
+                    book.style.transform = 'translateX(0px)'
+                }
+			}
+			function next_page(){
+                // 如果当前是最后一页，并往前翻
+                if ( 0 == pageNo ) {
+                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(250px)'
+                    b1.disabled = false   
+                }
+                else {
+                	allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                }
+                allPages[pageNo].style.zIndex = 1000 + pageNo
+
+                pageNo ++
+
+                if( PAGECOUNT == pageNo ) {
+                    b2.disabled = true
+                    book.style.transform = 'translateX(500px)'
+                }
+			}
+		</script>
+	</body>
+</html>

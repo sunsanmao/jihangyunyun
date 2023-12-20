@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>xizhenlishiwenhuajie</title>
+    <style>
+        /* *{
+    margin: 0;
+    padding: 0;
+} */
+body,html{
+    height:100%;
+    width:100%;
+    /* position:fixed; */
+
+}
+    body{
+    /* 100%窗口高度 */
+    /* height: 100vh; */
+    /* 弹性布局 居中显示 */
+    display: fixed;
+    /* justify-content: center;
+    align-items: center;  */
+    /* 渐变背景 */
+    background: linear-gradient(200deg,#f5f7fa,#3c7ce4);
+    background-position: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    justify-content: center;
+  align-items: center;
+  font-family: "Anton", sans-serif;
+  display: flex;
+
+}
+
+.b{
+    top:5%;
+
+    display: fixed;
+    position: absolute;
+    justify-content: center;
+    font-size: 55px;
+    font-family: 华文楷体;
+    font-weight: 700;
+
+    
+}
+/* body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: "Anton", sans-serif;
+  justify-content: center;
+  align-items: center;
+} */
+#musicIcon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+.night {
+  position: relative;
+  width: 600%;
+  height: 400%;
+  transform: rotateZ(139deg);
+  
+}
+
+.shooting_star {
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  height: 2px;
+  background: linear-gradient(-45deg, #9fbaf3, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  /* z-index: 98; */
+}
+
+.shooting_star::before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 1px * 2);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+  animation: shining 3000ms ease-in-out infinite;
+  /* z-index: 99; */
+}
+
+.shooting_star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px * 2);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+  transform: translateX(10%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+  animation: shining 3000ms ease-in-out infinite;
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+.shooting_star:nth-child(1) {
+  top: calc(50% - -4px * 2);
+  left: calc(50% - 248px);
+  -webkit-animation-delay: 3060ms;
+  animation-delay: 3060ms;
+}
+
+.shooting_star:nth-child(1)::before,
+.shooting_star:nth-child(1)::after {
+  -webkit-animation-delay: 3060ms;
+  animation-delay: 3060ms;
+}
+
+.shooting_star:nth-child(2) {
+  top: calc(50% - 180px * 2);
+  left: calc(50% - 166px);
+  -webkit-animation-delay: 4693ms;
+  animation-delay: 4693ms;
+}
+
+.shooting_star:nth-child(2)::before,
+.shooting_star:nth-child(2)::after {
+  -webkit-animation-delay: 4693ms;
+  animation-delay: 4693ms;
+}
+
+.shooting_star:nth-child(3) {
+  top: calc(50% - -88px * 2);
+  left: calc(50% - 136px);
+  -webkit-animation-delay: 1178ms;
+  animation-delay: 1178ms;
+}
+
+.shooting_star:nth-child(3)::before,
+.shooting_star:nth-child(3)::after {
+  -webkit-animation-delay: 1178ms;
+  animation-delay: 1178ms;
+}
+
+.shooting_star:nth-child(4) {
+  top: calc(50% - 92px * 2);
+  left: calc(50% - 92px);
+  -webkit-animation-delay: 9285ms;
+  animation-delay: 9285ms;
+}
+
+.shooting_star:nth-child(4)::before,
+.shooting_star:nth-child(4)::after {
+  -webkit-animation-delay: 9285ms;
+  animation-delay: 9285ms;
+}
+
+.shooting_star:nth-child(5) {
+  top: calc(50% - 55px * 2);
+  left: calc(50% - 65px);
+  -webkit-animation-delay: 5475ms;
+  animation-delay: 5475ms;
+}
+
+.shooting_star:nth-child(5)::before,
+.shooting_star:nth-child(5)::after {
+  -webkit-animation-delay: 5475ms;
+  animation-delay: 5475ms;
+}
+
+.shooting_star:nth-child(6) {
+  top: calc(50% - -164px * 2);
+  left: calc(50% - 27px);
+  -webkit-animation-delay: 9220ms;
+  animation-delay: 9220ms;
+}
+
+.shooting_star:nth-child(6)::before,
+.shooting_star:nth-child(6)::after {
+  -webkit-animation-delay: 9220ms;
+  animation-delay: 9220ms;
+}
+
+.shooting_star:nth-child(7) {
+  top: calc(50% - -136px * 2);
+  left: calc(50% - 243px);
+  -webkit-animation-delay: 7942ms;
+  animation-delay: 7942ms;
+}
+
+.shooting_star:nth-child(7)::before,
+.shooting_star:nth-child(7)::after {
+  -webkit-animation-delay: 7942ms;
+  animation-delay: 7942ms;
+}
+
+.shooting_star:nth-child(8) {
+  top: calc(50% - 174px * 2);
+  left: calc(50% - 75px);
+  -webkit-animation-delay: 8312ms;
+  animation-delay: 8312ms;
+}
+
+.shooting_star:nth-child(8)::before,
+.shooting_star:nth-child(8)::after {
+  -webkit-animation-delay: 8312ms;
+  animation-delay: 8312ms;
+}
+
+.shooting_star:nth-child(9) {
+  top: calc(50% - 138px * 2);
+  left: calc(50% - 281px);
+  -webkit-animation-delay: 6475ms;
+  animation-delay: 6475ms;
+}
+
+.shooting_star:nth-child(9)::before,
+.shooting_star:nth-child(9)::after {
+  -webkit-animation-delay: 6475ms;
+  animation-delay: 6475ms;
+}
+
+.shooting_star:nth-child(10) {
+  top: calc(50% - 25px * 2);
+  left: calc(50% - 25px);
+  -webkit-animation-delay: 7118ms;
+  animation-delay: 7118ms;
+}
+
+.shooting_star:nth-child(10)::before,
+.shooting_star:nth-child(10)::after {
+  -webkit-animation-delay: 7118ms;
+  animation-delay: 7118ms;
+}
+
+.shooting_star:nth-child(11) {
+  top: calc(50% - 184px * 2);
+  left: calc(50% - 198px);
+  -webkit-animation-delay: 8570ms;
+  animation-delay: 8570ms;
+}
+
+.shooting_star:nth-child(11)::before,
+.shooting_star:nth-child(11)::after {
+  -webkit-animation-delay: 8570ms;
+  animation-delay: 8570ms;
+}
+
+.shooting_star:nth-child(12) {
+  top: calc(50% - -194px * 2);
+  left: calc(50% - 283px);
+  -webkit-animation-delay: 1026ms;
+  animation-delay: 1026ms;
+}
+
+.shooting_star:nth-child(12)::before,
+.shooting_star:nth-child(12)::after {
+  -webkit-animation-delay: 1026ms;
+  animation-delay: 1026ms;
+}
+
+.shooting_star:nth-child(13) {
+  top: calc(50% - 169px * 2);
+  left: calc(50% - 42px);
+  -webkit-animation-delay: 4957ms;
+  animation-delay: 4957ms;
+}
+
+.shooting_star:nth-child(13)::before,
+.shooting_star:nth-child(13)::after {
+  -webkit-animation-delay: 4957ms;
+  animation-delay: 4957ms;
+}
+
+.shooting_star:nth-child(14) {
+  top: calc(50% - -114px * 2);
+  left: calc(50% - 139px);
+  -webkit-animation-delay: 5748ms;
+  animation-delay: 5748ms;
+}
+
+.shooting_star:nth-child(14)::before,
+.shooting_star:nth-child(14)::after {
+  -webkit-animation-delay: 5748ms;
+  animation-delay: 5748ms;
+}
+
+.shooting_star:nth-child(15) {
+  top: calc(50% - 140px * 2);
+  left: calc(50% - 283px);
+  -webkit-animation-delay: 2809ms;
+  animation-delay: 2809ms;
+}
+
+.shooting_star:nth-child(15)::before,
+.shooting_star:nth-child(15)::after {
+  -webkit-animation-delay: 2809ms;
+  animation-delay: 2809ms;
+}
+
+/* .shooting_star:nth-child(16) {
+  top: calc(50% - 72px * 2);
+  left: calc(50% - 88px);
+  -webkit-animation-delay: 8661ms;
+  animation-delay: 8661ms;
+}
+
+.shooting_star:nth-child(16)::before,
+.shooting_star:nth-child(16)::after {
+  -webkit-animation-delay: 8661ms;
+  animation-delay: 8661ms;
+}
+
+.shooting_star:nth-child(17) {
+  top: calc(50% - 40px * 2);
+  left: calc(50% - 273px);
+  -webkit-animation-delay: 8037ms;
+  animation-delay: 8037ms;
+}
+
+.shooting_star:nth-child(17)::before,
+.shooting_star:nth-child(17)::after {
+  -webkit-animation-delay: 8037ms;
+  animation-delay: 8037ms;
+}
+
+.shooting_star:nth-child(18) {
+  top: calc(50% - 176px * 2);
+  left: calc(50% - 27px);
+  -webkit-animation-delay: 826ms;
+  animation-delay: 826ms;
+}
+
+.shooting_star:nth-child(18)::before,
+.shooting_star:nth-child(18)::after {
+  -webkit-animation-delay: 826ms;
+  animation-delay: 826ms;
+}
+
+.shooting_star:nth-child(19) {
+  top: calc(50% - -164px * 2);
+  left: calc(50% - 229px);
+  -webkit-animation-delay: 1822ms;
+  animation-delay: 1822ms;
+}
+
+.shooting_star:nth-child(19)::before,
+.shooting_star:nth-child(19)::after {
+  -webkit-animation-delay: 1822ms;
+  animation-delay: 1822ms;
+}
+
+.shooting_star:nth-child(20) {
+  top: calc(50% - 85px * 2);
+  left: calc(50% - 161px);
+  -webkit-animation-delay: 5305ms;
+  animation-delay: 5305ms;
+}
+
+.shooting_star:nth-child(20)::before,
+.shooting_star:nth-child(20)::after {
+  -webkit-animation-delay: 5305ms;
+  animation-delay: 5305ms;
+}
+
+.shooting_star:nth-child(21) {
+  top: calc(50% - 100px * 2);
+  left: calc(50% - 300px);
+  -webkit-animation-delay: 4305ms;
+  animation-delay: 4305ms;
+}
+
+.shooting_star:nth-child(21)::before,
+.shooting_star:nth-child(21)::after {
+  -webkit-animation-delay: 4305ms;
+  animation-delay: 4305ms;
+} */
+
+.shooting_star:nth-child(22) {
+  top: calc(50% - -194px * 2);
+  left: calc(50% - 200px);
+  -webkit-animation-delay: 100ms;
+  animation-delay: 126ms;
+}
+
+.shooting_star:nth-child(22)::before,
+.shooting_star:nth-child(22)::after {
+  -webkit-animation-delay: 100ms;
+  animation-delay: 126ms;
+}
+
+@-webkit-keyframes tail {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes shining {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 30px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 30px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@-webkit-keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+.aj{
+    /* top:93px; */
+    display: flex;
+    position: absolute;
+    /* justify-content: ightr; */
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none;
+    left:60%;
+    font-size: 24px;
+    font-weight:700;
+    font-family:仿宋;
+    bottom:10%;
+    z-index: 100;
+
+}
+.ai{
+    /* top:93px; */
+    display: flex;
+    position: absolute;
+    /* justify-content: ightr; */
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none;
+    left:30%;
+    font-size: 24px;
+    font-weight:700;
+    font-family:仿宋;
+    bottom:10%;
+    z-index: 100;
+
+}
+    .container{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    /* 允许换行 */
+    flex-wrap: wrap;
+}
+    .card{
+    position: relative;
+    width: 240px;
+    height: 350px;
+    margin: 10px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #f5f5f5;
+    /* 阴影 */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1),
+    0 2px 2px rgba(0,0,0,0.1),
+    0 4px 4px rgba(0,0,0,0.1),
+    0 8px 8px rgba(0,0,0,0.1),
+    0 16px 16px rgba(0,0,0,0.1);
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+    .card::before{
+    content: "";
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-image: url(/images/139/1.jpg); */
+    background-size: cover;
+    background-position: 0 0;
+    /* 过渡效果: css属性名 时长 贝塞尔曲线 */
+    transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+}
+/* 分别设置图片 */
+    .card:nth-child(1)::before{
+    background-image: url(photos/jie1.jpg);
+}
+    .card:nth-child(2)::before{
+    background-image: url(photos/jie2.jpg);
+}
+    .card:nth-child(3)::before{
+
+    background-image: url(photos/jie3.jpg);
+}
+    .card:nth-child(4)::before{
+    background-image: url(photos/jie4.jpg);
+}
+/* 遮罩 */
+    .card::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.25) 55%,
+    rgba(0,0,0,0.8) 100%);
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    /* 过渡效果 */
+    transition: transform 1.4s cubic-bezier(0.19,1,0.22,1);
+}
+    .card .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 16px 8px;
+    transform: translateY(76%);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+    .card h2{
+    font-size: 23px;
+    font-weight: bold;
+}
+    .card p{
+    font-size: 15px;
+    /* 字间距 */
+    letter-spacing: 2px;
+    width: 80%;
+    line-height: 30px;
+    margin-top: 25px;
+    /* 文本两端对齐 */
+    text-align: justify;
+}
+    .card button{
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+    .card button:hover{
+    background-color: #000;
+}
+    .card .content *:not(h2){
+    /* .content下，除了h2，其他元素隐藏并下移20px */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1),opacity 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+    .card:hover{
+    align-items: center;
+}
+    .card:hover::before{
+    transform: translateY(-5%);
+}
+    .card:hover::after{
+    transform: translateY(-50%);
+}
+    .card:hover .content{
+    transform: translateY(0);
+}
+    .card:hover .content *:not(h2){
+    opacity: 1;
+    transform: translateY(0);
+    /* 过渡效果延迟 */
+    transition-delay: 0.1s;
+}
+    </style>
+    <!-- <link rel="stylesheet" href="139.css"> -->
+</head>
+
+<body>
+    <p class="b">历史文化街</p>
+    <a class="aj" href="yemianlunbo.html">返回上一页</a>
+    <a class="ai" href="xuanzejiemian.html">返回首页</a>
+
+        
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <h2>古渡口区</h2>
+                    <p>古渡口区是西津渡历史文化街的核心区域，历史上是长江沿岸的重要渡口。这里保存完好的古建筑、古码头和古渡口遗址，是见证镇江古代水上交通贸易的珍贵实物。游客可以在这里感受到古代渡口繁忙的场景，了解镇江在古代中国的重要地位。</p>
+                    <button>查看更多</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2>历史建筑区</h2>
+                    <p>历史建筑区位于古渡口区的两侧，这里有大量的清代和民国时期的建筑，这些建筑风格各异，既有传统的中式建筑，也有融合西方元素的近现代建筑。这些历史建筑是镇江历史文化的重要组成部分，也是研究中国近代建筑史的重要资料。</p>
+                    <button>查看更多</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2>文化展示区</h2>
+                    <p>文化展示区主要展示了镇江的历史文化和民间艺术。这里有博物馆、展览馆等文化设施，展示了镇江的历史文物、古籍书画、民间艺术等。游客可以在这里深入了解镇江的历史文化，感受镇江独特的文化魅力。</p>
+                    <button>查看更多</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2>商业休闲区</h2>
+                    <p>商业休闲区位于历史文化街的两侧，这里有各种特色小吃店、手工艺品店等。游客可以在这里品尝到地道的镇江美食，购买到精美的手工艺品，感受到镇江独特的商业氛围。同时，这里还有许多休闲设施，游客可以在这里休息放松，享受美好的时光。</p>
+                    <button>查看更多</button>
+                </div>
+            </div>
+        </div>
+        <body translate="no">
+            <div class="night">
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+              <div class="shooting_star"></div>
+            </div>
+            <!-- 背景音乐 -->
+            <audio id="backgroundMusic" loop>
+                <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+               
+              </audio>
+              <span id="musicIcon">🎵</span>
+            
+              <script>
+                // 这段代码的作用是获取页面上的音乐图标元素和背景音乐元素，并初始化一个变量来表示音乐是否正在播放（初始状态为正在播放）。
+                const musicIcon = document.getElementById('musicIcon');
+                const backgroundMusic = document.getElementById('backgroundMusic');
+                let isMusicPlaying = true;
+            
+            // 点击一下，开始播放音乐，再点一下，暂停
+                musicIcon.addEventListener('click', () => {
+                  if (isMusicPlaying) {
+                    backgroundMusic.pause();
+                    isMusicPlaying = false;
+                  } else {
+                    backgroundMusic.play();
+                    isMusicPlaying = true;
+                  }
+                });
+              </script>
+    </body>
+    </html>

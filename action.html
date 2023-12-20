@@ -49,12 +49,18 @@
 				</div>
 				<div class="alter_text">
 					<p>
-						制作中……
+						拱宸桥,是杭城古桥中最高最长的石拱桥,
+						“拱宸”这个名字有一语双关的妙意。
+						“宸”，一是指地理方位中的北位，二是皇权的象征符号之一，指代天子。
+						“拱”，一是表拱卫、环绕之意，二是形容外形为弧形的建筑结构。
 					</p>
 					<p>
-		
-					</p>
-		
+						相比于广济桥，比较广济桥的七个桥洞，拱宸桥只有三个桥洞。
+						一座拱宸桥，半部杭州史。
+						明崇祯初，一些人下定了决心要在此地造桥。
+						如今拱宸桥又被赋予了亚运会“宸宸”身份，让这座古老的三孔石桥走进更多人们的梦里。
+					
+					</P>
 				</div>
 				<div class="btn_daka" onclick="close_alart()"></div>
 			</div>
@@ -238,7 +244,7 @@
 					开凿到现在已有2500多年的历史。
 				</div>
 				<div style="width:250px;"></div>
-				<div id="gcyy"><img src="img/loading.png"></div>
+				<div id="gcyy"><img src="img/gongchen.png"></div>
 				<div style="width: 380px;"></div>
 				<div id="long_zw">
 					它是全球开凿时间最早、使用时间最久、空间跨度最大的运河，
@@ -247,7 +253,7 @@
 					2500年横贯古今。
 				</div>
 				<div style="width: 300px;"></div>
-				<div id="qxrj"><img src="img/loading.png"></div>
+				<div id="qxrj"><img src="img/qxi.png"></div>
 				<div style="width: 570px;"></div>
 				<div id="long_zw">
 					京杭大运河绵延万万里而永不停歇，
@@ -255,7 +261,7 @@
 					为加强流域附近的经济发展起到了重要的作用。
 				</div>
 				<div style="width: 600px;"></div>
-				<div id="xjfy"><img src="img/loading.png"></div>
+				<div id="xjfy"><img src="img/xiangjisi.png"></div>
 				<div style="width: 300px;"></div>
 				<div id="long_zw">
 					运河贯通南北，
@@ -351,7 +357,7 @@
 				<img src="img/jiantou.png"/>
 			</div>
 			<div class="back_gd">
-				<iframe src="index2.html" class="page"></iframe>
+				<iframe src="js/1.html" class="page"></iframe>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -422,11 +428,11 @@
 				if (!isPaused){
 					e.innerHTML="<img src='img/jiantou1.png'/>";
 					window.cancelAnimationFrame(raf);
-					document.getElementById("inner_page").style.transform="translateY(-42%)";
+					document.getElementById("inner_page").style.bottom=770+'px';
 				    isPaused = true;
 				}else if(isPaused){
 					e.innerHTML="<img src='img/jiantou.png'/>";
-					document.getElementById("inner_page").style.transform="translateY(53%)";
+					document.getElementById("inner_page").style.bottom=0+"px";
 					text_left-=1;
 					raf=window.requestAnimationFrame(move);
 				    isPaused = false;
