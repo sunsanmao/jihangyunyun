@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xiangjisi</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/ss2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 华文楷体;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('xiang2.jpg');
+    /* z-index: 99; */
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner #text{
+    position: absolute;
+    top:20px;
+    font-size: 4em;
+    color: #182c5e;
+    font-family: 华文行楷;
+}
+.banner .clouds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 20;
+}
+.banner .clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: animate calc(3s * var(--i)) linear infinite;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%, 79%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+section{
+    position: relative;
+    padding: 75px 100px;
+}
+section h2{
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.ai{
+    font-size: 30px;
+    font-family: 仿宋;
+    display: fixed;
+    text-decoration: none;
+    color: rgb(71, 133, 219);
+    position: absolute;
+    bottom: 15px;
+    right:20px;
+    font-weight: 700;
+    z-index: 39;
+    
+
+}
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div class="banner">
+        <h2 id="text">香积寺</h2>
+        <div class="clouds">
+            <img src="cloud1.png" style="--i:1;">
+            <img src="cloud2.png" style="--i:2;">
+            <img src="cloud3.png" style="--i:3;">
+            <!-- <img src="/photos/cloud4.png" style="--i:2;"> -->
+            <img src="cloud5.png" style="--i:2;"> 
+            <!-- <img src="/photos/cloud5.png" style="--i:2;">-->
+             <img src="cloud2.png" style="--i:3;"> 
+             <img src="cloud3.png" style="--i:3;"> 
+            <img src="cloud4.png" style="--i:3;">
+            <img src="cloud5.png" style="--i:2;">
+        </div>
+    </div>
+    <section>
+        <h2>Part1 香积寺总介</h2>
+        <p>香积寺位于京杭大运河沿岸，是一座历史悠久、文化底蕴深厚的佛教寺庙。它不仅是佛教净土宗的重要道场之一，也是中国传统文化的重要组成部分。
+
+            香积寺的历史可以追溯到唐代，据史书记载，唐代高僧善导曾在此弘扬净土宗，使得香积寺成为了中国佛教净土宗的祖庭之一。自此以后，香积寺成为了净土宗的重要道场，吸引了众多信徒前来朝拜和修行。
+            
+            在历史长河中，香积寺经历了多次战乱和自然灾害，但始终屹立不倒，保持着其独特的佛教文化和传统。同时，香积寺也见证了京杭大运河的繁荣和衰落，成为了大运河沿岸的重要文化景点之一。
+            
+            香积寺的建筑风格独特，体现了中国古建筑的精湛技艺和美学追求。寺庙内的建筑结构严谨，布局合理，充满了神秘与宁静之美。同时，寺庙内的佛像和壁画也是其重要的文化遗产之一，展现了佛教艺术的独特魅力。
+            
+            除了佛教文化外，香积寺还承载了丰富的历史文化和民俗风情。在寺庙内，游客可以欣赏到传统的佛教舞蹈、音乐和戏曲表演，感受到中国传统文化的独特魅力。此外，香积寺还经常举办各种文化活动和宗教仪式，吸引了众多游客前来参观和体验。
+            
+            总的来说，香积寺是一座充满历史底蕴和文化魅力的佛教寺庙。它不仅是佛教净土宗的重要道场之一，也是中国传统文化的重要组成部分。在京杭大运河沿岸的香积寺，游客可以感受到中国传统文化的独特魅力和佛教文化的深厚底蕴。同时，香积寺也是了解中国历史文化、民俗风情和佛教文化的重要窗口之一。</p>
+        <h2>Part2 建筑特色</h2>
+        <p>香积寺的建筑特色主要体现在以下几个方面：
+
+            建筑布局：香积寺的建筑布局严谨，中轴线对称，体现了中国传统建筑的特色。从牌坊进入，依次为天王殿、大圣紧那罗王殿、大雄宝殿、藏经阁等主要建筑，两侧还有观音殿、文殊殿、普贤殿、钟鼓楼等建筑，形成了完整的建筑群落。
+            
+            建筑风格：香积寺的建筑风格融合了唐代和明清两代的特点，既有唐代建筑的雄浑大气，又有明清建筑的细腻精致。寺庙内的建筑结构以木结构为主，屋顶采用歇山顶和悬山顶等多种形式，墙面采用青砖和灰砖砌筑，显得古朴典雅。
+            
+            建筑装饰：香积寺的建筑装饰非常精美，主要表现在门窗、栏杆、屋檐等部位。门窗多采用花格窗和隔扇窗，栏杆则多采用石质或木质的雕花栏杆，屋檐则多采用飞檐翘角的造型，给人一种高耸入云的感觉。
+            
+            建筑色彩：香积寺的建筑色彩以灰色为主，显得古朴庄重。同时，寺庙内的彩绘和壁画也是其重要的特色之一，这些彩绘和壁画以佛教题材为主，色彩鲜艳，形象生动，给人一种神秘而庄重的感觉。
+            
+            总的来说，香积寺的建筑特色体现了中国传统建筑的独特魅力，同时也承载了丰富的历史文化内涵。</p>
+            <br>
+            <h2>Part3 历史文化</h2> 
+        <p>香积寺文化体现了佛教净土宗的信仰理念。净土宗强调念佛、持戒、修定、观想等修行方法，认为通过这些方法可以消除烦恼、获得智慧、成就佛道。香积寺作为净土宗的重要道场之一，吸引了众多信徒前来朝拜和修行，形成了独特的佛教文化氛围。
+            此外，香积寺文化还体现在文学艺术上。香积寺的诗歌、散文、小说等文学作品丰富多样，其中以王维的《过香积寺》最为著名。这首诗描绘了香积寺的幽静环境和深邃意境，表达了作者对佛教净土宗的信仰和追求。
+
+最后，香积寺文化还体现在民俗风情上。在香积寺周边地区，有许多与佛教相关的民俗活动和传统文化表现形式，如佛教舞蹈、音乐、戏曲等。这些民俗活动和传统文化表现形式不仅丰富了香积寺文化的内涵，也体现了中国传统文化和佛教文化的融合与发展。
+        </p>
+    </section>
+    <script>
+        let text = document.getElementById('text');
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            text.style.marginBotton = value * 1 + 'px';
+        });
+    </script>
+    <a class='ai' href="../yemianlunbo.html">返回</a>
+</body>
+</html>

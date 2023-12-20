@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>江南运河</title>
+		<style type="text/css">
+			body{
+				background-image: url("../img/背景2.jpg");
+				background-repeat: no-repeat;
+				background-size:100% 100%;
+				background-attachment: fixed;
+			}
+			
+			#btnBack{
+				width: 150px;
+				height: 60px;
+				font-size: 25px;
+				position: absolute;
+				top: 150px;
+				left: 180px;
+				font-family: 华文新魏;
+			}
+			
+			#boat{
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				bottom: 100px;
+				left: 20px;
+				transition: all 1.5s linear;
+			}
+			
+			#jiang{
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				bottom: 200px;
+				left: 15px;
+				animation: spin 1.5s linear infinite;
+				transition: all 1.5s linear;
+			}
+			@keyframes spin{
+				100%{transform: rotate(360deg)}
+			}
+			
+			#t1{
+				width: 600px;
+				height:560px;
+				float: left;
+				display: inline;
+				margin-top: 0px;
+				margin-left: 150px;
+				line-height: 40px;
+				position: absolute;
+				left: 500px;
+				top: 80px;
+				font-family: 方正舒体;
+				font-size: 30px;
+				border: #00FFFF 5px solid;
+			}
+			
+			#tt2{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 410px;
+				top: 100px;
+			}
+			
+			#pic22{
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				right: 8px;
+				top: 1000px;
+				border: #FFC0CB 8px solid;
+				border-radius: 3px;
+				transition: all 2s linear;
+			}
+			
+		</style>
+	</head>
+	<body onload="move()">
+		<a href="1.html"><input type="button" id="btnBack" value="←上一页←"></a>
+		<img id="boat" src="../img/boat.webp" />
+		<img id="jiang" src="../img/jiang.png" />
+		<img id="tt2" src="../img/tt2.png"/>
+		<img id="pic22" src="../img/pic22.jpg" />
+		<div id="t1">自长江南岸谏壁口经丹阳、常州、无锡、苏州、平望至杭州联通钱塘江，又隔钱塘江南接杭甬运河。
+		</br>其中，平望至杭州有3条航线，即东、中、西线，如以东线计算，全长323.8公里，中线全长为318公里。
+		</br>东线是元末形成的老航线，由江苏平望入浙，经嘉兴、石门、崇福、塘栖、武林头至杭州的老航线，航程约130公里，继续通航；
+		</br>1970年代建成新航线，即中线，江苏平望入浙后，循澜溪塘，经乌镇、练市、新市、塘栖、武林头至杭州，航程缩短至107公里
+		</br>是现代江南运河浙江段的主航道。西线即頔塘，为通往浙江湖州的分支。</div>
+			<script type="text/javascript">
+				function move(){
+					document.getElementById("boat").style.left = "320px";
+					document.getElementById("jiang").style.left = "305px";
+					document.getElementById("pic22").style.top = "200px";
+				}
+	
+			</script>
+	</body>
+</html>
