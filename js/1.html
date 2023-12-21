@@ -3,217 +3,96 @@
 	<head>
 		<meta charset="utf-8">
 		<title>江南运河</title>
+		<link rel="stylesheet" href="../css/shiyan5.css"/>
 		<style type="text/css">
 			body{
-				background-image: url("../img/背景1.jpg");
+				background-image: url("../img/背景1.jpg") ;
 				background-repeat: no-repeat;
 				background-size:100% 100%;
 				background-attachment: fixed;
 				overflow: hidden;
 			}
-			.t1{
-				font-family: 华文行楷;
-				font-size: 100px;
+			#tupian{
+				display: flex;
+				flex-direction: column;
+			}
+			#buttons{
+				position: absolute;
+				width: inherit ;
+				height:inherit;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.arrow {
+				z-index: 2;
+				display: none;
+				font-size: 36px;
+				font-weight: bold;
+				line-height: 37px;
 				text-align: center;
+				color: white;
+				cursor: pointer;
 			}
-			.t2{
-				width: 600px;
-				height:800px;
-				float: left;
-				display: inline;
-				margin-top: 0px;
-				margin-left: 150px;
-				line-height: 40px;
-				font-family: 方正舒体;
-				font-size: 30px;
-			}
-			.t3{
-				width:50px;
-				height:500px;
-				position:absolute;
-				top:150px;
-				left:520px;
-				font-family: 方正姚体;
-				font-size: 25px;
-				writing-mode: tb-rl;
-			}
-			#t4{
-				font-family: 楷体;
-				font-size: 20px;
-				width:300px;
-				height:20px;
-				position: absolute;
-				right:300px;
-				top:0px;
-				transition: all 1s linear;
-			}
-			.p1{
-				float: left;
-				width:450px;
-				height:450px;
-				margin-top:0;
-				margin-left: 5px;
-				display: inline;
-			}
-			.p1 img:hover{
-				width:512px;
-				height:512px;
-				border: 10px solid aqua;
-				transition: all 1s ease;
-			}
-			.p1 img{
-				display: inline;
-				width:450px;
-				height:450px;
-			}
-			.p2 img{
-				position: absolute;
-				right:1000px;
-				top:110px;
-				width: 400px;
-				height:450px;
-				transition: all 1s ease;
-			}
-			.line{
-				width: 3px;
-				height: 500px;
-				background-color: pink;
-				position: absolute;
-				left: 590px;
-				top: 140px;
-			}
-			        #container {
-			            position: relative;
-						top: 320px;
-						right: 600px;
-			            width: 580px;
-			            height: 266px;
-			            border: 3px solid #333;
-			            overflow: hidden;
-			        }
-			        #list {
-			            z-index: 1;
-			            width: 580px;
-			            height: 100%;
-			        }
-			        #list img {
-			            width: 580px;
-			        }
-			        .arrow {
-			            display:block;
-			            position: absolute;
-			            top: 110px;
-			            z-index: 2;
-			            display: none;
-			            width: 20px;
-			            height: 40px;
-			            font-size: 36px;
-			            font-weight: bold;
-			            line-height: 37px;
-			            text-align: center;
-			            color: white;
-			            cursor: pointer;
-			        }
-			        #container:hover .arrow {
-			            display: block;
-			        }
-			        #last {
-			            left: 3px;
-			        }
-					#next{
-						right: 20px;
-					}
-			        #gonext{
-						width: 220px;
-						height: 60px;
-						font-size: 25px;
-						position: absolute;
-						top: 60px;
-			            right: 280px;
-						font-family: 华文新魏;
-			        }
-					#smallPic{
-						width: 100%;
-						height: 10px;
-						display: flex;
-						justify-content: center;
-						position: absolute;
-						top: 0px;
-						font-family: 华文行楷;
-						color: #FFFFFF;
-						font-size: 20px;
-					}
-					
-			#bottomWave{
-				width: 100%;
-				height: 500px;
-				position: absolute;
-				right: 1000px;
-				top: 600px;
-				transition: all 2s ease;
-			}
-			
-			#boat{
-				width: 300px;
-				height: 300px;
-				position: absolute;
-				top: 650px;
-				left: 11px;
-				transition: all 3s linear;
-			}
-			
-			#jiang{
-				width: 80px;
-				height: 80px;
-				position: absolute;
-				bottom: 50px;
-				left: 0px;
-				animation: spin 2s linear infinite;
-				transition: all 3s linear;
-			}
-			@keyframes spin{
-				100%{transform: rotate(360deg)}
+			#text_inner{
+				display: flex;
 			}
 		</style>
 	</head>
-	<body onload="move()">
+	<body>
 		<input type="button" id="gonext" value="→航行至下一页→">
 		<div>
 			<div class="t1">江南运河</div>
-			<div class="p1"><a href="https://baike.baidu.com/item/%E6%B1%9F%E5%8D%97%E8%BF%90%E6%B2%B3/4375393?structureClickId=4375393&structureId=69510a16ebb0341b68c4ec9e&structureItemId=d488195bd82d8044bab0b160&lemmaFrom=starMapContent_star&fromModule=starMap_content&lemmaIdFrom=345335"><img src="../img/p1.jpg" /></a></div>
-			<div class="t2">作为京杭大运河开始的一部分，江南运河，北隔长江接里运河，
-			</br>自长江南岸谏壁口经丹阳、常州、无锡、苏州、平望至杭州联通钱塘江，
-			</br>又隔钱塘江南接杭甬运河。
-			</br>江南运河一般可通航40～100吨级船舶，年货运量达1600余万吨。
-			</br>是京杭运河运输最繁忙的航道。</div>
-			<div class="t3">↓江南运河无锡城区段↓ *点击图片查看*</div>
-			<div class="p2"><img id="pic2" src="../img/p2.png" /></div>
-			<div id="t4">●当前所在位置→→→→→→→→</div>
-			<div class="line"></div>
+			<div style="display: flex;height: 580px;justify-content: center;">
+				<div id ="tupian">
+					<div class="p1"><a href="https://baike.baidu.com/item/%E6%B1%9F%E5%8D%97%E8%BF%90%E6%B2%B3/4375393?structureClickId=4375393&structureId=69510a16ebb0341b68c4ec9e&structureItemId=d488195bd82d8044bab0b160&lemmaFrom=starMapContent_star&fromModule=starMap_content&lemmaIdFrom=345335"><img src="../img/p1.jpg" /></a></div>
+					<div id="container">
+						<div id="buttons">
+							<span id="last" class="arrow" onclick="picView()">《</span>
+							<span id="next" class="arrow" onclick="picView()">》</span>
+						</div>
+						<div id="list">
+							<img src="../img/jnyh1.jpg" id="picView"/>
+						</div>
+					</div>
+					<p id="smallPic">《图片可轮播查看》</p>
+				</div>
+				<div id="text_inner">
+					<div class="t3">↓江南运河无锡城区段↓ *点击图片查看*</div>
+				<div class="line"></div>
+					<div class="t2">
+						作为京杭大运河开始的一部分，江南运河，北隔长江接里运河，
+						</br>自长江南岸谏壁口经丹阳、常州、无锡、苏州、平望至杭州联通钱塘江，
+						</br>又隔钱塘江南接杭甬运河。
+						</br>江南运河一般可通航40～100吨级船舶，年货运量达1600余万吨。
+						</br>是京杭运河运输最繁忙的航道。
+					</div>
+				</div>
+				
+				
+				<div style="width: 300px;">
+					<div class="p2"><img id="pic2" src="../img/p2.png" /></div>
+					<div id="t4">●当前所在位置→→→→→→→→</div>
+				</div>
+				
+			</div>
 			<img id="bottomWave" src="../img/wave3.png" />
 		</div>
-			<div id="container">
-		        <div id="list">
-		            <img src="../img/jnyh1.jpg" id="picView"/>
-		        </div>
-		        <span id="last" class="arrow" onclick="picView()">《</span>
-		        <span id="next" class="arrow" onclick="picView()">》</span>
-				<p id="smallPic">《图片可轮播查看》</p>
-		    </div>
+			
 			<img id="boat" src="../img/boat.webp" />
 			<img id="jiang" src="../img/jiang.png" />
 			   
 			<script type="text/javascript">
-			  window.onload = move;
+			  window.onload = move();
 			  var a = 1;
 			  function move(){
-				  document.getElementById("t4").style.top = "450px";
+				  document.getElementById("t4").style.bottom = "353px";
 				  document.getElementById("pic2").style.right = "150px";
 				  document.getElementById("bottomWave").style.right = "0px";
 				  document.getElementById("boat").style.left = "1120px";
 				  document.getElementById("jiang").style.left = "1105px";
 			  }
-			  let btn = document.getElementById("gonext");
+			  var btn = document.getElementById("gonext");
 			  btn.addEventListener("click",goon);
 			  btn.addEventListener("click",settime);
 			  function goon(){
