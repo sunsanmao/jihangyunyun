@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guang Ji</title>
+<title>广济桥</title>
 <style>
     /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
     body,html{
@@ -17,6 +17,11 @@
         font-size:60px;
         font-family:华文行楷;
     }
+    @keyframes star{
+	    0%{opacity:0}
+      	50%{opacity:1}
+      	100%{opacity:0}
+        }
 *{
     margin: 0;
     padding: 0;
@@ -29,9 +34,20 @@ body{
     align-items: center;
     height: 100vh;
     /* background: #16384c; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    
     
   background: linear-gradient(#16384c, rgb(211, 211, 214));
 }
+
+
+       
+
+      
+        
 
 .container{
     position: relative;
@@ -95,6 +111,13 @@ body{
     margin-top: -40px;
     transition-delay: 0.3s;
 } 
+#musicIcon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 40px;
+      cursor: pointer;
+    }
 .k{
     text-decoration: none;
             color:rgba(145, 255, 0, 0.604);
@@ -140,5 +163,57 @@ body{
 </div>
 <p class="p1">广济桥</p>
 <a class="k" href="yemianlunbo.html">返回</a>
+<script type="text/javascript">
+    window.onload = function(){
+        //调用星动画
+        createStar()
+    }
+    function createStar(){
+        var offsetWidth = document.body.offsetWidth;
+        var offsetHeight = document.body.offsetHeight;
+        
+        //创建星，并设置相应样式
+        var star = document.createElement("img");
+        star.src = "photos/star.png";
+        star.style.position = "absolute";
+        star.style.left = (Math.random()*offsetWidth)+"px";
+        star.style.top = (Math.random()*offsetHeight)+"px";
+        star.style.opacity = 0;
+        star.style.animation = "star 2s ease";//给星添加animation动画
+        
+        //动画完成，将星从body中删除
+        star.addEventListener("animationend",function(){
+          document.body.removeChild(this);
+        });
+        
+        //将星添加给body
+        document.body.appendChild(star);
+        
+        window.setTimeout("createStar()",100);
+    }
+  </script>
+  <audio id="backgroundMusic" loop>
+    <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
+   
+  </audio>
+  <span id="musicIcon">🎵</span>
+
+  <script>
+    // 这段代码的作用是获取页面上的音乐图标元素和背景音乐元素，并初始化一个变量来表示音乐是否正在播放（初始状态为正在播放）。
+    const musicIcon = document.getElementById('musicIcon');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    let isMusicPlaying = true;
+
+// 点击一下，开始播放音乐，再点一下，暂停
+    musicIcon.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        backgroundMusic.pause();
+        isMusicPlaying = false;
+      } else {
+        backgroundMusic.play();
+        isMusicPlaying = true;
+      }
+    });
+  </script>
 </body>
 </html> 

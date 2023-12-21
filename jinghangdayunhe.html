@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京杭大运河博物馆</title>
+    <style>
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        body {
+            margin: 0;
+            overflow: hidden;
+            /* background-color: rgb(198, 190, 223); */
+            
+        }
+        body {
+        background: linear-gradient(to bottom, rgb(103, 186, 254), rgb(198, 190, 223));
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-size: 100% 100%;
+}
+        canvas {
+            display: block;
+        }
+        .div1{
+        font-family: 华文行楷;
+        font-size:20px;
+        left:20px;
+        top:30px;
+        color:rgb(23, 165, 118)
+      }
+      .div2{
+        font-family: 华文行楷;
+        font-size:20px;
+        left:20px;
+        top:30px;
+        color:rgb(193, 193, 14)
+      }
+      p{
+        font-family: 楷体;
+        color:rgb(91, 117, 211);
+        /* font-size:20px; */
+        font-weight:700;
+        font-size:18px;
+      }
+      h1{
+        font-family:华文新魏;
+        font-size:40px;
+        color:rgb(147, 147, 215)
+      }
+      .a1{
+        width:350px;
+        position:flex;
+        top:20px;
+        opacity: 0.8;
+       
+      }
+      .ak{
+        z-index: 100;
+        font-family: 华文楷体;
+        color: rgb(5, 5, 152);
+        left:80%;
+        top:10px;
+      }
+      .a2{
+        width:400px;
+        position:flex;
+        right:30px;
+        bottom:100px;
+        opacity: 0.8;
+      }
+        .card {
+  perspective: 1000px;
+  width: 200px;
+  height: 300px;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* backface-visibility: hidden; */
+  transition: transform 0.6s;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: none;
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+  display: block;
+}
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* z-index: -1; */
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .item {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            color:rgb(142, 108, 174);
+            font-family:行楷;
+            top:50%;
+            left:50%;
+        }
+        .k{
+            text-decoration: none;
+            color:rgba(149, 103, 255, 0.604);
+            font-family:楷体;
+            font-size:25px;
+            position: relative;
+            left:90%;
+            top:20px;
+            z-index: 99;
+            /* right:3%; */
+        }
+        .ai{
+          z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <a class="k" href="yemianlunbo.html">退出</a>
+    <script>
+        const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const info = item.getAttribute('data-info');
+                alert(info);
+            });
+        });
+    </script>
+    <div class="content">
+        <h1>京杭大运河博物馆</h1>
+        <p>京杭大运河博物馆是一座致力于展现中国大运河历史、文化和现状的综合性博物馆。</p>
+          <p>博物馆位于京杭大运河的核心区域，依托于大运河的千年历史，以丰富的文物展品、详尽的文献资料
+            以及多元化的展陈手段，全面展示了京杭大运河的兴衰变迁、大运河沿岸的政治、经济、文化、社会生活
+            以及环境保护等各个方面的历史和现状。</p>
+          <p>在这里，您可以深入了解大运河的历史价值和文化内涵，感受中国传统文化的独特魅力。</p>
+          <p>  欢迎您来到京杭大运河博物馆，共同见证这条世界文化遗产的辉煌历程。</p>
+          <p>以下这两种文物为京杭大运河的代表性文物，让我们点击文物，进行了解</p>
+        <div id="items">
+            <div class="item" data-info="轻触图片了解此物">马踏飞燕</div>
+            <div class="item" data-info="轻触图片了解此物">沙飞船</div>
+            <!-- <div class="item" data-info="文物3简介">文物3</div> -->
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-front">
+          <img class="a1" src="photos/ma.jpg" alt="Photo" class="photo">
+          
+        </div>
+        <div class="card-back">
+          <div class="div1">是东汉时期的青铜器，于1969年出土于甘肃省武威雷台墓，现藏于甘肃省博物馆。这件高仅34.5厘米的铜奔马，作一匹正腾空飞奔的千里马形象。它体型矫健，昂首嘶鸣，头部微微地向左倾伸，尾部轻盈飘扬，将骏马飞驰的动感表现得淋漓尽致。</div>
+        </div>
+      </div>
+      <!-- 第二章卡 -->
+      <div class="card">
+        <div class="card-front">
+          <img class="a2" src="photos/chuanmoxing.jpg" alt="Photo" class="photo">
+          
+        </div>
+        <div class="card-back">
+          
+          <div class="div2">这是扬州沙氏所造的一种豪华客船，主要航行于苏州、杭州、扬州、湖州、宁波的大运河及长江下游。沙飞船做工精致，用材考究，船型舱深宽大，稳定性良好。它也被称为“迎船”或“楼船”，是当时大户人家娶亲或观戏之船。</div>
+        </div>
+    <canvas id="snowCanvas"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Snowflake {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 + 1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'white';
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        const snowflakes = [];
+
+        function createSnowflake() {
+            const snowflake = new Snowflake();
+            snowflakes.push(snowflake);
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < snowflakes.length; i++) {
+                snowflakes[i].update();
+                snowflakes[i].draw();
+
+                if (snowflakes[i].size <= 0.2) {
+                    snowflakes.splice(i, 1);
+                    i--;
+                }
+            }
+
+            if (Math.random() < 0.1) {
+                createSnowflake();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+    <a class="ak" href="yemianlunbo.html">返回上一页</a>
+    
+</body>
+</html>
