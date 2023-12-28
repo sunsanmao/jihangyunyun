@@ -1,0 +1,155 @@
+.t1 {
+	font-family: 华文行楷;
+	font-size: 100px;
+	text-align: center;
+}
+
+.t2 {
+	width: 600px;
+	float: left;
+	display: inline;
+	margin:0 20px;
+	line-height: 40px;
+	font-family: 方正舒体;
+	font-size: 30px;
+}
+
+.t3 {
+	width: 50px;
+	/*position: absolute;
+	top: 150px;
+	left: 520px;*/
+	font-family: 方正姚体;
+	font-size: 25px;
+	writing-mode: tb-rl;
+}
+
+#t4 {
+	font-family: 楷体;
+	font-size: 20px;
+	width: 300px;
+	position: absolute;
+	bottom: 0px;
+	transition: all 1s linear;
+}
+
+.p1 {
+	float: left;
+	width: 320px;
+	display: inline;
+}
+
+.p1 img:hover {
+	width: 350px;
+	border: 5px solid dimgrey;
+	transition: all .3s ease;
+}
+
+.p1 img {
+	display: inline;
+	width: 320px;
+	height: 170px;
+}
+
+.p2{
+	/*position: absolute;
+	right: 1000px;
+	top: 110px;*/
+	width: 325px;
+	transition: all 1s ease;
+}
+.p2>img{
+	width:inherit;
+	
+}
+.line {
+	width: 3px;
+	height: 500px;
+	background-color: pink;
+	/*position: absolute;
+	left: 590px;
+	top: 140px;*/
+}
+
+#container {
+	/*position: relative;
+	top: 320px;
+	right: 600px;*/
+	display: flex;
+	width: 316px;
+	margin-top: 22px;
+	height: 145px;
+	border: 3px solid #333;
+}
+
+#list{
+	width: 316px;
+	height: 145px;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+}
+#list>img {
+	width: inherit;
+	position: absolute;
+}
+
+
+
+#container:hover .arrow {
+	display: block;
+}
+
+
+
+#gonext {
+	width: 160px;
+	height: 50px;
+	font-size: 18px;
+	position: fixed;
+	top: 60px;
+	right: 20px;
+	font-family: 华文新魏;
+}
+
+#smallPic {
+	width:100%;
+	font-family: 华文行楷;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+}
+
+#bottomWave {
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	right: 1000px;
+	top: 600px;
+	transition: all 2s ease;
+}
+
+#boat {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 650px;
+	left: 11px;
+	transition: all 3s linear;
+}
+
+#jiang {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	bottom: 50px;
+	left: 0px;
+	animation: spin 2s linear infinite;
+	transition: all 3s linear;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg)
+	}
+}
