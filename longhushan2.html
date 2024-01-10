@@ -1,106 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龙虎山1</title>
-    <style>
-        body,html{
-            height:100%;
-            width:100%;
-            overflow: hidden;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        /* 背景图片透明化效果 */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('photos/longhushan2.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.5; /* 设置背景图片的透明度 */
-            z-index:-1;
-/* }
-        body{
-            background-image: url('photos/longhushan2.jpg');
-            background-size: cover;
-            background-size: 100% 100%;
-            /* opacity: 0.8;  设置透明度，范围为0到1 */
-            /* background-color: rgba(0, 0, 0, 0.5);
-            background-repeat: no-repeat; */
-        } 
-        p{
-            text-indent: 2em;
-            font-family: 楷体;
-            color: rgb(57, 59, 1); 
-            z-index:3;
-            font-size: 25px;
-            
-
-        }
-        div{
-            z-index:3;
-            left:50%;
-            top:50%;
-            padding-left: 40px;
-            padding-right: 30px;
-        }
-        /* .bg {
-            height: 80%;
-            width: 80%;
-            border-radius: 20px;
-            background-image: url('http://www.youyu001.com/res/htmlLX/134.jpg');
-            opacity: 0.7;
-        } */
-        .snow {
-            position: absolute;
-            color: rgb(112, 113, 28,0.5);
-            font-size: 45px;
-            z-index: 1;
-        }
-        h1{
-            color:rgb(40, 103, 8);
-            font-family: 华文行楷;
-            position:fixed;
-            position: relative;
-            top:30%;
-            left:45%;
-            font-size: 40px;
-        }
-        .k{
-            text-decoration: none;
-            color:rgba(145, 255, 0, 0.604);
-            font-family:楷体;
-            font-size:25px;
-            position: relative;
-            z-index: 3;
-            right:8%;
-        }
-        .d{
-            text-decoration: none;
-            color:rgba(151, 214, 3, 0.779);
-            font-family:楷体;
-            font-size:25px;
-            position: relative;
-            z-index: 3;
-            right:5%;
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>龙虎山1</title>
+<style>
+body,html{
+height:100%;
+width:100%;
+overflow: hidden;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* 背景图片透明化效果 */
+body::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('photos/longhushan2.jpg');
+background-size: cover;
+background-position: center;
+opacity: 0.5; /*设置背景图片的透明度 */
+z-index:1;
+}
+.div1{
+  left:0%;
+  top:10%;
+  width: 300px;
+     padding: 20px;
+      border: 1px solid #000;
+      text-align: center; /* 文字水平居中 */
+}
+.content::after{
+    content: "";
+    display: block;
+    width: 92%;
+    height: 100%;
+    background: linear-gradient(
+    rgba(24, 24, 24, 0.5) 0%,
+    rgba(11, 11, 11, 0.5) 55%,
+    rgba(28, 28, 28, 0.5) 100%);
+    /* 绝对定位 */
+    position: absolute;
+    /* text-align: center;
+    justify-content: center; */
+    /* left: 50%; */
+    /* top:50%; */
+    top:0;
+    left:55px;
+    z-index: 2;
+    border-radius: 20px;
     
+    }
+
+  .d{
+text-decoration: none;
+color:rgba(151, 214, 3, 0.779);
+font-family:楷体;
+font-size:300px;
+position: relative;
+z-index: 3;
+right:5%;
+}
+.content{
+  color:rgba(151, 214, 3, 0.779);
+z-index:3;
+left:0%;
+top:10%;
+position: relative;
+padding-left: 60px;
+padding-right: 60px; 
+font-size: 70px;
+line-height: 31px;
+padding-top: 1px;
+padding-bottom: 1px;
+}
+.snow {
+position: absolute;
+color: rgba(255, 255, 255, 0.997);
+font-size: 45px;
+z-index: 1;
+}
+h1{
+color:#8d9031;
+font-family: 华文楷体;
+position: absolute;
+top:40px;
+left:40%; 
+font-size: 60px;
+z-index: 4;
+}
+p{
+text-indent: 2em;
+font-family: 楷体;
+color: #ffffff;
+z-index:3;
+font-size: 26px;
+/* justify-content: center; */
+position: relative;
+padding-left: 10px; 
+
+}
+.k{
+text-decoration: none;
+color:rgb(67, 95, 3);;
+font-family:楷体;
+font-size:30px;
+position: absolute;
+z-index: 3;
+font-weight: 700;
+left:8%;
+bottom:6%;
+}
+.d{
+text-decoration: none;
+color:rgb(67, 95, 3);
+font-family:楷体;
+font-size:30px;
+position: absolute;
+z-index: 3;
+font-weight: 700;
+right:5%;
+bottom:6%;
+}
+
+</style>
 </head>
+<h1>龙虎山</h1>
 <body onload="init()">
-    <div class="image">
-        <h1>龙虎山</h1>
-    <div><p>
-        龙虎山背景：
+<div class="image">
+<div class="content">
+
+<div><p>
+龙虎山背景：
 龙虎山原名云锦山，因东汉中叶张道陵在此炼丹，丹成而龙虎现，因改名龙虎山。据道教典籍记载，张道陵第四代传人张盛在三国或西晋时已赴龙虎山定居，此后张天师后裔世居龙虎山，至今承袭六十三代，历经1900多年。
 </div></p>
 <div><p>
@@ -114,50 +151,50 @@
 龙虎山的山水景色十分优美，有着“小桂林”之称。这里的山水相依，景色秀美，有着许多美丽的景点，如仙女岩、象鼻山、莲花洞等。在仙女岩上，可以看到一尊形似仙女的小岩石，传说这是张道陵的弟子仙女修炼成仙的地方。在象鼻山景点，可以看到一座形似大象的山峰，其壮观的景色让人叹为观止。
 
 除了自然景观外，龙虎山还有着许多人文景观，如天师府、正一观等。这些古建筑和文物都有着悠久的历史和独特的文化内涵，可以让游客更好地了解中国的道教文化和历史。
-</p>  </div></div>
+</p>  </div></div></div>
 
-    <div class="bg"></div>
-    <div class="snow" id="snow0">💮</div>
-    <div class="snow" id="snow1">🏵</div>
-    <div class="snow" id="snow2">🌸</div>
-    <div class="snow" id="snow3">🌸</div>
-    <div class="snow" id="snow4">💮</div>
-    <div class="snow" id="snow5">🏵</div>
-  
-    <script>
-      var speed = [];
-  
-      function init() {
-        for (var i = 0; i < 6; i++) {
-          document.getElementById("snow" + i).style.top = "-30px";
-          var width = document.body.offsetWidth;
-          var left = Math.random() * width;
-          document.getElementById("snow" + i).style.left = left + "px";
-          var size = Math.random() * 30 + 15;
-          document.getElementById("snow" + i).style.fontSize = size + "px";
-          speed.push(Math.random() * 3 + 1);
-        }
-        moveSnow();
+<div class="bg"></div>
+<div class="snow" id="snow0">💮</div>
+<div class="snow" id="snow1">🏵</div>
+<div class="snow" id="snow2">🌸</div>
+<div class="snow" id="snow3">🌸</div>
+<div class="snow" id="snow4">💮</div>
+<div class="snow" id="snow5">🏵</div>
+
+<script>
+  var speed = [];
+
+  function init() {
+    for (var i = 0; i < 6; i++) {
+      document.getElementById("snow" + i).style.top = "-30px";
+      var width = document.body.offsetWidth;
+      var left = Math.random() * width;
+      document.getElementById("snow" + i).style.left = left + "px";
+      var size = Math.random() * 30 + 15;
+      document.getElementById("snow" + i).style.fontSize = size + "px";
+      speed.push(Math.random() * 3 + 1);
+    }
+    moveSnow();
+  }
+
+  function moveSnow() {
+    for (var i = 0; i < 6; i++) {
+      var snowflake = document.getElementById("snow" + i);
+      var top = parseInt(snowflake.style.top.replace("px", ""));
+      top += speed[i];
+      snowflake.style.top = top + "px";
+      
+      if (top > document.body.offsetHeight) {
+        snowflake.style.top = "-30px";
+        var width = document.body.offsetWidth;
+        var left = Math.random() * width;
+        snowflake.style.left = left + "px";
       }
-  
-      function moveSnow() {
-        for (var i = 0; i < 6; i++) {
-          var snowflake = document.getElementById("snow" + i);
-          var top = parseInt(snowflake.style.top.replace("px", ""));
-          top += speed[i];
-          snowflake.style.top = top + "px";
-          
-          if (top > document.body.offsetHeight) {
-            snowflake.style.top = "-30px";
-            var width = document.body.offsetWidth;
-            var left = Math.random() * width;
-            snowflake.style.left = left + "px";
-          }
-        }
-        window.requestAnimationFrame(moveSnow);
-      }
-    </script>
-    <a class="k" href="yemianlunbo.html">返回上一页</a>
-    <a class="d" href="xuanzejiemian.html">回到首页</a>
+    }
+    window.requestAnimationFrame(moveSnow);
+  }
+</script>
+<a class="k" href="yemianlunbo.html">返回上一页</a>
+<a class="d" href="xuanzejiemian.html">回到首页</a>
 </body>
 </html>
