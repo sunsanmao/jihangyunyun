@@ -3,27 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<title>江南运河</title>
-		<link rel="stylesheet" href="../css/shiyan5.css"/>
+		<link rel="stylesheet" href="../css/shiyan5.css" />
 		<style type="text/css">
-			body{
-				background-image: url("../img/背景1.jpg") ;
+			body {
+				background-image: url("../img/背景1.jpg");
 				background-repeat: no-repeat;
-				background-size:100% 100%;
+				background-size: 100% 100%;
 				background-attachment: fixed;
 				overflow: hidden;
 			}
-			#tupian{
+
+			#tupian {
 				display: flex;
 				flex-direction: column;
 			}
-			#buttons{
+
+			#buttons {
 				position: absolute;
-				width: inherit ;
-				height:inherit;
+				width: inherit;
+				height: inherit;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 			}
+
 			.arrow {
 				z-index: 2;
 				display: none;
@@ -34,32 +37,33 @@
 				color: white;
 				cursor: pointer;
 			}
-			#text_inner{
+
+			#text_inner {
 				display: flex;
 			}
 		</style>
 	</head>
 	<body>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<input type="button" id="gonext" value="→航行至下一页→">
 		<div>
 			<div class="t1">江南运河</div>
 			<div style="display: flex;height: 580px;justify-content: center;">
-				<div id ="tupian">
-					<div class="p1"><a href="https://baike.baidu.com/item/%E6%B1%9F%E5%8D%97%E8%BF%90%E6%B2%B3/4375393?structureClickId=4375393&structureId=69510a16ebb0341b68c4ec9e&structureItemId=d488195bd82d8044bab0b160&lemmaFrom=starMapContent_star&fromModule=starMap_content&lemmaIdFrom=345335"><img src="../img/p1.jpg" /></a></div>
+				<div id="tupian">
+					<div class="p1"><a href="https://baike.baidu.com/item/%E6%B1%9F%E5%8D%97%E8%BF%90%E6%B2%B3/4375393?structureClickId=4375393&structureId=69510a16ebb0341b68c4ec9e&structureItemId=d488195bd82d8044bab0b160&lemmaFrom=starMapContent_star&fromModule=starMap_content&lemmaIdFrom=345335"><img
+							 src="../img/p1.jpg" /></a></div>
 					<div id="container">
 						<div id="buttons">
 							<span id="last" class="arrow" onclick="picView()">《</span>
 							<span id="next" class="arrow" onclick="picView()">》</span>
 						</div>
-						<div id="list">
-							<img src="../img/jnyh1.jpg" id="picView"/>
-						</div>
+						<div id="list"></div>
 					</div>
 					<p id="smallPic">《图片可轮播查看》</p>
 				</div>
 				<div id="text_inner">
 					<div class="t3">↓江南运河无锡城区段↓ *点击图片查看*</div>
-				<div class="line"></div>
+					<div class="line"></div>
 					<div class="t2">
 						作为京杭大运河开始的一部分，江南运河，北隔长江接里运河，
 						</br>自长江南岸谏壁口经丹阳、常州、无锡、苏州、平望至杭州联通钱塘江，
@@ -68,50 +72,65 @@
 						</br>是京杭运河运输最繁忙的航道。
 					</div>
 				</div>
-				
-				
+
+
 				<div style="width: 300px;">
 					<div class="p2"><img id="pic2" src="../img/p2.png" /></div>
 					<div id="t4">●当前所在位置→→→→→→→→</div>
 				</div>
-				
+
 			</div>
 			<img id="bottomWave" src="../img/wave3.png" />
 		</div>
-			
-			<img id="boat" src="../img/boat.webp" />
-			<img id="jiang" src="../img/jiang.png" />
-			   
-			<script type="text/javascript">
-			  window.onload = move();
-			  var a = 1;
-			  function move(){
-				  document.getElementById("t4").style.bottom = "353px";
-				  document.getElementById("pic2").style.right = "150px";
-				  document.getElementById("bottomWave").style.right = "0px";
-				  document.getElementById("boat").style.left = "1120px";
-				  document.getElementById("jiang").style.left = "1105px";
-			  }
-			  var btn = document.getElementById("gonext");
-			  btn.addEventListener("click",goon);
-			  btn.addEventListener("click",settime);
-			  function goon(){
-				  document.getElementById("boat").style.left = "1620px";
-				  document.getElementById("jiang").style.left = "1605px"; 
-			  }
-			  function settime(){
-				  setTimeout(fun,3000)
-			  }
-			  function fun(){
-				  window.location.href = '2.html';
-			  }
-		      function picView() {
-		        a++;
-		        if(a>2){
-		            a=1;
-		        }
-		        document.getElementById("picView").src="../img/jnyh"+a+".jpg";
-		      }
-			</script>
+
+		<img id="boat" src="../img/boat.webp" />
+		<img id="jiang" src="../img/jiang.png" />
+
+		<script type="text/javascript">
+			window.onload = move;
+			var a = 1;
+
+			function move() {
+				document.getElementById("t4").style.bottom = "353px";
+				document.getElementById("pic2").style.right = "150px";
+				document.getElementById("bottomWave").style.right = "0px";
+				document.getElementById("boat").style.left = "1120px";
+				document.getElementById("jiang").style.left = "1105px";
+			}
+			var btn = document.getElementById("gonext");
+			btn.addEventListener("click", goon);
+			btn.addEventListener("click", settime);
+
+			function goon() {
+				document.getElementById("boat").style.left = "1620px";
+				document.getElementById("jiang").style.left = "1605px";
+			}
+
+			function settime() {
+				setTimeout(fun, 3000)
+			}
+
+			function fun() {
+				window.location.href = '2.html';
+			}
+
+			var a = 2;
+			$(document).ready(function() {
+				$("#last").click(function() {
+					a--;
+					if (a == 0) {
+						a = 2;
+					}
+					$("#list").css("background-image","url(../img/jnyh"+ a +".jpg)")
+				});
+				$("#next").click(function() {
+					a--;
+					if (a == 0) {
+						a = 2;
+					}
+					$("#list").css("background-image", "url(../img/jnyh"+ a +".jpg)")
+				});
+			})
+		</script>
 	</body>
 </html>

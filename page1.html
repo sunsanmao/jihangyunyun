@@ -212,64 +212,66 @@
 				>
 			</button>
 		</div>
-		<script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
 			const PAGECOUNT=13;
 			var pageNo=0;
-			var pages=document.querySelectorAll('.page');
-			var c1=document.getElementById('cover1');
-			var c2=document.getElementById('cover2');
-			var book = document.querySelector('.book'); 
-			var b1=document.getElementById("left_button");
-			var b2=document.getElementById("right_button");
-			var allPages=document.querySelectorAll('.one_page')
+			var pages=$('.page');
+			var c1=$('#cover1');
+			var c2=$('#cover2');
+			var book = $('.book'); 
+			var b1=$("#left_button");
+			var b2=$("#right_button");
+			var allPages=$('.one_page')
 			function init(){
 				for (var index=0;index<pages.length;index++){
-					pages[index].style.zIndex=PAGECOUNT-index-1;
+					pages.eq(index).css('z-index',PAGECOUNT-index-1);
 				}
-				c1.style.zIndex=PAGECOUNT;
-				c2.style.zIndex=1;
+				c1.css('zIndex',PAGECOUNT);
+				c2.css('zIndex','1');
 				b1.disabled = false  
 			}
-			init()
+			window.onload(init());
 			function last_page(){
 				if (pageNo>=0){
 					pageNo --
 				}
                 // 如果当前是最后一页，并往前翻
                 if ((PAGECOUNT - 1) == pageNo) {
-                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                    allPages.eq(pageNo).css('transform','rotateY(0deg)')
                     //( 240px + 50px ) * 0.5
-                    book.style.transform = 'translateX(250px)'
+                    book.css('transform','translateX(250px)')
                     b2.disabled = false   
                 }
                 else {
-                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                    allPages.eq(pageNo).css('transform','rotateY(0deg)')
                 }
-                allPages[pageNo].style.zIndex = PAGECOUNT - pageNo
+                
+                allPages.eq(pageNo).css('zIndex',PAGECOUNT - pageNo)
 
                 if( 0 == pageNo ) {
                     b1.disabled = true
-                    book.style.transform = 'translateX(0px)'
+                    book.css('transform','translateX(0px)')
                 }
 			}
 			function next_page(){
                 // 如果当前是最后一页，并往前翻
                 if ( 0 == pageNo ) {
-                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                    allPages.eq(pageNo).css('transform','rotateY(-180deg)')
                     //( 240px + 50px ) * 0.5
-                    book.style.transform = 'translateX(250px)'
+                    book.css('transform','translateX(250px)')
                     b1.disabled = false   
                 }
                 else {
-                	allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                    allPages.eq(pageNo).css('transform','rotateY(-180deg)')
                 }
-                allPages[pageNo].style.zIndex = 1000 + pageNo
+                allPages.eq(pageNo).css('zIndex',1000+pageNo)
 
                 pageNo ++
 
                 if( PAGECOUNT == pageNo ) {
                     b2.disabled = true
-                    book.style.transform = 'translateX(500px)'
+                    book.css('transform','translateX(500px)')
                 }
 			}
 		</script>

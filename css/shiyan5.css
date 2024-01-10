@@ -88,6 +88,8 @@
 	position: relative;
 	display: flex;
 	overflow: hidden;
+	background-image:url(../img/jnyh2.jpg);
+	background-size: 340px 240px;
 }
 #list>img {
 	width: inherit;
