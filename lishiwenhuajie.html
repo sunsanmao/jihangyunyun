@@ -58,13 +58,20 @@ body,html{
   justify-content: center;
   align-items: center;
 } */
-#musicIcon {
+/* #musicIcon {
       position: fixed;
       top: 20px;
       right: 20px;
       font-size: 40px;
       cursor: pointer;
-    }
+    } */
+    .play-icon {
+            position: fixed;
+            top: 60px;
+            right: 100px;
+            font-size: 50px;
+            cursor: pointer;
+        }
 .night {
   position: relative;
   width: 600%;
@@ -81,7 +88,7 @@ body,html{
   background: linear-gradient(-45deg, #9fbaf3, rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px #699bff);
-  -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  /* -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite; */
   animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
   /* z-index: 98; */
 }
@@ -89,13 +96,11 @@ body,html{
 .shooting_star::before {
   content: "";
   position: fixed;
-  top: calc(50% - 1px * 2);
   right: 0;
   height: 2px;
   background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
   transform: translateX(50%) rotateZ(45deg);
   border-radius: 100%;
-  -webkit-animation: shining 3000ms ease-in-out infinite;
   animation: shining 3000ms ease-in-out infinite;
   /* z-index: 99; */
 }
@@ -103,13 +108,10 @@ body,html{
 .shooting_star::after {
   content: "";
   position: absolute;
-  top: calc(50% - 1px * 2);
   right: 0;
   height: 2px;
   background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
-  transform: translateX(10%) rotateZ(45deg);
   border-radius: 100%;
-  -webkit-animation: shining 3000ms ease-in-out infinite;
   animation: shining 3000ms ease-in-out infinite;
   transform: translateX(50%) rotateZ(-45deg);
 }
@@ -117,13 +119,11 @@ body,html{
 .shooting_star:nth-child(1) {
   top: calc(50% - -4px * 2);
   left: calc(50% - 248px);
-  -webkit-animation-delay: 3060ms;
   animation-delay: 3060ms;
 }
 
 .shooting_star:nth-child(1)::before,
 .shooting_star:nth-child(1)::after {
-  -webkit-animation-delay: 3060ms;
   animation-delay: 3060ms;
 }
 
@@ -726,7 +726,36 @@ body,html{
               <div class="shooting_star"></div>
             </div>
             <!-- 背景音乐 -->
-            <audio id="backgroundMusic" loop>
+            <div id="playButton" class="play-icon" onclick="togglePlay()">🔈</div>
+
+    <audio id="audioPlayer" src="photos/aizhuanjiao.mp3"></audio>
+
+    <script>
+        var audio = document.getElementById("audioPlayer");
+        var playButton = document.getElementById("playButton");
+        var isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                playButton.innerHTML = "🔈";
+            } else {
+                audio.play();
+                isPlaying = true;
+                playButton.innerHTML = "🔊";
+            }
+        }
+
+        audio.addEventListener("ended", function() {
+            // 音乐播放结束后循环播放
+            audio.currentTime = 0;
+            audio.play();
+            isPlaying = true;
+            playButton.innerHTML = "🔊";
+        });
+    </script>
+            <!-- <audio id="backgroundMusic" loop>
                 <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
                
               </audio>
@@ -748,6 +777,6 @@ body,html{
                     isMusicPlaying = true;
                   }
                 });
-              </script>
+              </script> -->
     </body>
     </html>

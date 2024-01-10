@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document1</title>
+    <title>首界面</title>
     <style>
         body,html{
             width:100%;
@@ -72,10 +72,17 @@
             box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
         }
 
-        #musicIcon {
+        /* #musicIcon {
             position: fixed;
             top: 20px;
             right: 20px;
+            font-size: 40px;
+            cursor: pointer;
+        } */
+        .play-icon {
+            position: fixed;
+            top: 40px;
+            right: 60px;
             font-size: 40px;
             cursor: pointer;
         }
@@ -164,7 +171,36 @@
 </head>
 <body>
     <!-- 背景音乐 -->
-    <audio id="backgroundMusic" loop>
+    <div id="playButton" class="play-icon" onclick="togglePlay()">🔈</div>
+
+    <audio id="audioPlayer" src="photos/aizhuanjiao.mp3"></audio>
+
+    <script>
+        var audio = document.getElementById("audioPlayer");
+        var playButton = document.getElementById("playButton");
+        var isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                playButton.innerHTML = "🔈";
+            } else {
+                audio.play();
+                isPlaying = true;
+                playButton.innerHTML = "🔊";
+            }
+        }
+
+        audio.addEventListener("ended", function() {
+            // 音乐播放结束后循环播放
+            audio.currentTime = 0;
+            audio.play();
+            isPlaying = true;
+            playButton.innerHTML = "🔊";
+        });
+    </script>
+    <!-- <audio id="backgroundMusic" loop>
         <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
        
       </audio>
@@ -182,7 +218,8 @@
        isMusicPlaying = true;
      }
    });
-     </script>
+     </script> -->
+
 
     <!-- 正文 -->
     <div class="card">
@@ -192,7 +229,7 @@
             <h2>运河简介</h2>
             <p>京杭大运河是中国古代最长、最重要的人工运河之一，全长约1,794公里。
                 它推动了经济繁荣和文化交流，并保留了丰富的历史文化遗产，欢迎大家前来观赏和探索。</p>
-            <a href="https://baike.so.com/doc/30506950-32302561.html">了解更多</a>
+            <a href="page1.html">了解更多</a>
         </div>
         </div>
     </div>
@@ -212,10 +249,10 @@
             <span class="date3">part three</span>
             <h2>闯关大挑战</h2>
             <p>都游玩了这么久啦，快来挑战一下自我吧</p>
-                <a href="pintuxiaoguo.html" target="_blank">迎接挑战</a>
+                <a href="拼图.html" target="_blank">迎接挑战</a>
         </div>
         </div>
     </div>
-    <a class="a" href="#">🚢</a>
+    <a class="a" href="page1.html">📘</a>
 </body>
 </html>

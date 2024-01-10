@@ -21,56 +21,79 @@
         background-size: cover;
         background-position: center center;
         background-size: 100% 100%;
+        display:fixed;
 }
         canvas {
             display: block;
+           position: absolute;
         }
         .div1{
+          position: fixed;
+          top:30px;
         font-family: 华文行楷;
         font-size:20px;
-        left:20px;
-        top:30px;
-        color:rgb(23, 165, 118)
+        padding-left: 400px;
+        /* padding-right: -700px; */
+        overflow-wrap: break-word; /* 当单词边界超出容器宽度时换行 */
+      word-wrap: break-word; /* 为了兼容旧版本浏览器，也设置一下word-wrap */
+      width: 200px; /* 设置容器宽度 */
+        /* left:20px;  */
+        /* top:30px; */
+        color:rgb(15, 129, 91)
       }
       .div2{
+        position: fixed;
         font-family: 华文行楷;
+        top:60px;
         font-size:20px;
-        left:20px;
-        top:30px;
-        color:rgb(193, 193, 14)
+        padding-left: 400px;
+        overflow-wrap: break-word; /* 当单词边界超出容器宽度时换行 */
+      word-wrap: break-word; /* 为了兼容旧版本浏览器，也设置一下word-wrap */
+      width: 200px; /* 设置容器宽度 */
+        color:rgb(109, 109, 13)
       }
       p{
-        font-family: 楷体;
-        color:rgb(91, 117, 211);
+        font-family:华文行楷;
+        color:rgba(0, 82, 247, 0.654);
         /* font-size:20px; */
-        font-weight:700;
-        font-size:18px;
+        /* font-weight:700; */
+        font-size:20px;
+        text-align: left;
+
       }
       h1{
-        font-family:华文新魏;
-        font-size:40px;
-        color:rgb(147, 147, 215)
+        font-family:华文行楷;
+        font-size:44px;
+        font-weight: 400;
+        color:rgba(5, 5, 152, 0.581);
+        text-align: left;
       }
       .a1{
         width:350px;
-        position:flex;
+        /* position:fixed; */
+        position: relative;
         top:20px;
         opacity: 0.8;
-       
+        left:100px;
+        border-radius:20px;
       }
       .ak{
         z-index: 100;
-        font-family: 华文楷体;
-        color: rgb(5, 5, 152);
-        left:80%;
-        top:10px;
+        font-family: 华文行楷;
+        color: rgb(91, 5, 152);
+        left:50px;
+        position: absolute;
+        /* top:10px; */
       }
       .a2{
-        width:400px;
-        position:flex;
-        right:30px;
-        bottom:100px;
+        width:350px;
+        position:fixed;
+        position: relative;
+        left:100px;
+        top:50px;
+        /* bottom:30px; */
         opacity: 0.8;
+        border-radius:20px;
       }
         .card {
   perspective: 1000px;
@@ -83,6 +106,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  /* margin-left: 200px; */
   /* backface-visibility: hidden; */
   transition: transform 0.6s;
 }
@@ -92,11 +116,13 @@
 }
 
 .card-back {
+  transform-origin: top left;
   transform: rotateY(180deg);
   display: none;
 }
 
 .card:hover .card-front {
+  transform-origin: 250px;
   transform: rotateY(180deg);
 }
 
@@ -126,18 +152,18 @@
         }
         .item {
             cursor: pointer;
-            font-size: 18px;
+            font-size: 20px;
             margin: 10px;
             color:rgb(142, 108, 174);
-            font-family:行楷;
+            font-family:华文行楷;
             top:50%;
             left:50%;
         }
         .k{
             text-decoration: none;
-            color:rgba(149, 103, 255, 0.604);
-            font-family:楷体;
-            font-size:25px;
+            color:rgba(47, 134, 227, 0.931);
+            font-family:华文行楷;
+            font-size:30px;
             position: relative;
             left:90%;
             top:20px;
@@ -257,7 +283,7 @@
 
         animate();
     </script>
-    <a class="ak" href="yemianlunbo.html">返回上一页</a>
+    <!-- <a class="ak" href="yemianlunbo.html">返回上一页</a> -->
     
 </body>
 </html>
