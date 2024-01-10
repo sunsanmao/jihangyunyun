@@ -9,7 +9,8 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(rgb(105, 105, 255), rgb(234, 158, 171));
-           
+            background-size: cover;
+            overflow: hidden;
         }
         
         .a{
@@ -131,25 +132,34 @@
         .a5 {
               color:rgb(203, 74, 156);
               text-decoration: none;
-              font-size:45px;
+              font-size:46px;
               font-family:华文行楷;
               position: fixed; 
               bottom: 30px;
               right:50px;
             }
         .a6 {
-              color:rgb(74, 84, 203);
+              color:rgb(203, 74, 156);
               text-decoration: none;
-              font-size:45px;
+              font-size:46px;
               font-family:华文行楷;
               position: fixed; 
-              top:30px;left:20px;
+              bottom: 30px;;left:60px;
+        }
+        .kid{
+            color:rgb(74, 84, 203);
+              text-decoration: none;
+              font-size:60px;
+              font-family:华文行楷;
+              position: fixed; 
+              top: 30px;;left:500px;
         }
         .c{
             /* 放图片 广济桥*/
             
             background-image: url("photos/1.jpg");
              background-size: cover;/*将背景图像按比例缩放，以填充整个元素。这样可以确保背景图像充满整个画面。 */
+             border-radius:20px;
             
 
         }
@@ -157,70 +167,93 @@
             /* 放图片 京杭大运河博物馆*/
             background-image: url("photos/2.jpg");
             background-size: cover;
+            border-radius:20px;
             
         }
         .e{
             /* 放图片 香积寺*/
             background-image: url("photos/3.jpg");
             background-size: cover;
+            border-radius:20px;
         } 
         .f{
             /* 放图片 南京十里秦淮*/
             background-image: url("photos/4.jpg");
             background-size: cover;
+            border-radius:20px;
         }
         .g{
             /* 放图片 镇江西津渡历史文化街*/
             background-image: url("photos/5.jpg");
             background-size: cover;
+            border-radius:20px;
         }
         .h{
             /* 放图片 苏州虎丘山*/
             background-image: url("photos/6.jpg");
             background-size: cover;
+            border-radius:20px;
         } 
-        #musicIcon {
+        /* #musicIcon {
             position: fixed;
             top: 20px;
             right: 20px;
             font-size: 40px;
+            cursor: pointer;
+            
+        } */
+        .play-icon {
+            position: fixed;
+            top: 60px;
+            right: 100px;
+            font-size: 50px;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
     <!-- 背景音乐 -->
-    <audio id="backgroundMusic" loop>
-        <source src="photos/aizhuanjiao.mp3" type="audio/mpeg">
-       
-      </audio>
-      <span id="musicIcon">🎵</span>
-      <script>
-        const musicIcon = document.getElementById('musicIcon');
-   const backgroundMusic = document.getElementById('backgroundMusic');
-   let isMusicPlaying = true;
-   musicIcon.addEventListener('click', () => {
-     if (isMusicPlaying) {
-       backgroundMusic.pause();
-       isMusicPlaying = false;
-     } else {
-       backgroundMusic.play();
-       isMusicPlaying = true;
-     }
-   });
-     </script>
+    <div id="playButton" class="play-icon" onclick="togglePlay()">🔈</div>
+
+    <audio id="audioPlayer" src="photos/aizhuanjiao.mp3"></audio>
+
+    <script>
+        var audio = document.getElementById("audioPlayer");
+        var playButton = document.getElementById("playButton");
+        var isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                playButton.innerHTML = "🔈";
+            } else {
+                audio.play();
+                isPlaying = true;
+                playButton.innerHTML = "🔊";
+            }
+        }
+
+        audio.addEventListener("ended", function() {
+            // 音乐播放结束后循环播放
+            audio.currentTime = 0;
+            audio.play();
+            isPlaying = true;
+            playButton.innerHTML = "🔊";
+        });
+    </script>
      <!-- 正文 -->
+     <h1 class="kid">京杭漫游导览图</h1>
     <a href="guangjiqiao.html" class="a6">前去游览</a>
     <a href="xuanzejiemian.html" target="_blank" class="a5">返回首页</a>
     <div class="a"> 
         <div class="b">
-            <div class="c" style="--i:0" >
-                <a href="guangjiqiao.html" class="a4" target="_blank">广济桥</a></div>
-            <div class="d" style="--i:1"><a href="jinghangdayunhe.html" class="a3" target="_blank">京杭大运河博物馆</a></div>
-             <div class="e" style="--i:2"><a href="xiangjisi/xiangjisi.html" class="a1" target="_blank">香积寺</a></div>
-             <div class="f" style="--i:3"><a href="shiliqinhuai.html" class="a1" target="_blank">南京十里秦淮</a></div>
-             <div class="g" style="--i:4"><a href="lishiwenhuajie.html" target="_blank" class="a1">镇江西津渡历史文化街</a></div>
-             <div class="h" style="--i:5"><a href="longhushan.html" class="a2" target="_blank">苏州虎丘山</a></div>
+            <div class="c" style="--i:0" onclick="window.open('guangjiqiao.html', '_blank')"><a href="guangjiqiao.html" class="a3" target="_blank">广济桥</a></div>
+            <div class="d" style="--i:1" onclick="window.open('jinghangdayunhe.html', '_blank')"><a href="jinghangdayunhe.html" class="a3" target="_blank">京杭大运河博物馆</a></div>
+             <div class="e" style="--i:2" onclick="window.open('xiangjisi/xiangjisi.html', '_blank')"><a href="xiangjisi/xiangjisi.html" class="a1" target="_blank">香积寺</a></div>
+             <div class="f" style="--i:3" onclick="window.open('shiliqinhuai.html', '_blank')"><a href="shiliqinhuai.html" class="a1" target="_blank">南京十里秦淮</a></div>
+             <div class="g" style="--i:4" onclick="window.open('lishiwenhuajie.html', '_blank')"><a href="lishiwenhuajie.html" target="_blank" class="a1">镇江西津渡历史文化街</a></div>
+             <div class="h" style="--i:5" onclick="window.open('longhushan.html', '_blank')"><a href="longhushan.html" class="a2" target="_blank">苏州虎丘山</a></div>
         </div>
     </div>
     <script>
@@ -390,7 +423,7 @@ function startSakura() {
  document.getElementsByTagName('body')[0].appendChild(canvas);
  cxt = canvas.getContext('2d');
  var sakuraList = new SakuraList();
- // 设置樱花个数 , 设置21 ,每一朵樱花都是爱你的形状 dwj~
+ // 设置樱花个数 , 设置21 
  for(var i = 0; i < sakuraNum; i++) {
   var sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny;
   randomX = getRandom('x');
